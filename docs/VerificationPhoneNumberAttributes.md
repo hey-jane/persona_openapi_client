@@ -11,7 +11,9 @@
 | **submitted_at_ts** | **Integer** | The time the verification was submitted in Unix timestamp format | [optional] |
 | **completed_at** | **Time** | The time the verification was completed in ISO 8601 format | [optional] |
 | **completed_at_ts** | **Integer** | The time the verification was completed in Unix timestamp format | [optional] |
+| **redacted_at** | **Time** | The time the verification was redacted in ISO 8601 format | [optional] |
 | **country_code** | **String** | ISO 3166-1 alpha 2 country code. | [optional] |
+| **tags** | **Array&lt;String&gt;** | Tags on the verification | [optional] |
 | **checks** | [**Array&lt;VerificationSharedAttributesChecksInner&gt;**](VerificationSharedAttributesChecksInner.md) |  | [optional] |
 | **phone_number** | **String** |  | [optional] |
 | **confirmation_code** | **String** |  | [optional] |
@@ -30,7 +32,9 @@ instance = PersonaAPIClient::VerificationPhoneNumberAttributes.new(
   submitted_at_ts: 1700098276,
   completed_at: 2023-11-16T01:31:16.000Z,
   completed_at_ts: 1700098276,
+  redacted_at: 2023-11-16T01:31:16.000Z,
   country_code: US,
+  tags: null,
   checks: null,
   phone_number: +14169671111,
   confirmation_code: 12345,

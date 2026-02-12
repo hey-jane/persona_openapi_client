@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **status** | **String** |  | [optional] |
 | **reference_id** | **String** |  | [optional] |
-| **fields** | **Object** | JSON key-value pairs of field name to field value. Exact schema depends on the configuration of the Transaction Type for this Transaction. | [optional] |
+| **fields** | **Hash&lt;String, Object&gt;** | JSON key-value pairs of field name to field value. Exact schema depends on the configuration of the Transaction Type for this Transaction. Keys in &#x60;fields&#x60; are **not** key inflected. | [optional] |
 | **tags** | **Array&lt;String&gt;** |  | [optional] |
 | **created_at** | **Time** |  | [optional] |
 | **updated_at** | **Time** |  | [optional] |

@@ -14,7 +14,7 @@
 | **theme_set_id** | **String** | BETA FEATURE -- Theme Set ID for styling. Only available for Dynamic Flow Inquiries. | [optional] |
 | **redirect_uri** | **String** | If using the Hosted flow, redirect to this URL after completion | [optional] |
 | **note** | **String** | Unstructured field for your custom use | [optional] |
-| **fields** | [**CreateAnInquiryRequestDataAttributesFields**](CreateAnInquiryRequestDataAttributesFields.md) |  | [optional] |
+| **fields** | [**InquiryFields**](InquiryFields.md) |  | [optional] |
 | **tags** | **Array&lt;String&gt;** | A list of tag names to be associated with the Inquiry. | [optional] |
 | **initial_step_name** | **String** | BETA FEATURE -- Specify an alternate initial step. Only available for Dynamic Flow Inquiries. | [optional] |
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **source_account_ids** | **Array&lt;String&gt;** | A list of Account IDs that need to be consolidated into the destination Account. | [optional] |
+| **source_account_ids** | **Array&lt;String&gt;** | A list of Account IDs that need to be consolidated into the destination Account. |  |
 
 ## Example
 

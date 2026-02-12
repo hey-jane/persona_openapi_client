@@ -13,14 +13,18 @@
 | **address_city** | **String** | City of residence address. Not all international addresses use this attribute. | [optional] |
 | **address_subdivision** | **String** | State or subdivision of residence address. In the US, this should be the unabbreviated name. Not all international addresses use this attribute. | [optional] |
 | **address_postal_code** | **String** | ZIP or postal code of residence address. Not all international addresses use this attribute. | [optional] |
-| **front_photo** | **Object** |  | [optional] |
-| **back_photo** | **Object** |  | [optional] |
-| **selfie_photo** | **Object** |  | [optional] |
+| **front_photo** | [**Null**](Null.md) |  | [optional] |
+| **back_photo** | [**Null**](Null.md) |  | [optional] |
+| **selfie_photo** | [**Null**](Null.md) |  | [optional] |
 | **id_class** | **String** |  | [optional] |
 | **name_first** | **String** | Given or first name. | [optional] |
 | **name_middle** | **String** | Middle name. | [optional] |
 | **name_last** | **String** | Family or last name. | [optional] |
 | **name_suffix** | **String** |  | [optional] |
+| **native_name_first** | **String** | Native script given or first name. | [optional] |
+| **native_name_middle** | **String** | Native script middle name. | [optional] |
+| **native_name_last** | **String** | Native script family or last name. | [optional] |
+| **native_name_title** | **String** | Native script name title or prefix. | [optional] |
 | **birthdate** | **Date** |  | [optional] |
 | **issuing_authority** | **String** |  | [optional] |
 | **issuing_subdivision** | **String** |  | [optional] |
@@ -61,6 +65,10 @@ instance = PersonaAPIClient::DocumentGovernmentIdAttributes.new(
   name_middle: null,
   name_last: null,
   name_suffix: null,
+  native_name_first: null,
+  native_name_middle: null,
+  native_name_last: null,
+  native_name_title: null,
   birthdate: null,
   issuing_authority: null,
   issuing_subdivision: null,

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **title** | **String** | Request Timeout | [optional] |
+| **title** | **String** | Service unavailable | [optional] |
 | **details** | **String** |  | [optional] |
 
 ## Example

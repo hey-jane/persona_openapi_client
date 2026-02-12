@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **reference_id** | **String** | Reference ID on Account, refers to an entity in your user model | [optional] |
-| **account_status** | **String** | BETA FEATURE -- Name of the status to set on this Account. | [optional] |
+| **account_status** | **String** | Name of the status to set on this Account. | [optional] |
 | **selfie_photo** | [**UpdateAnAccountRequestDataAttributesAllOfSelfiePhoto**](UpdateAnAccountRequestDataAttributesAllOfSelfiePhoto.md) |  | [optional] |
 | **tags** | **Array&lt;String&gt;** | A list of tag names to be associated with the Account. | [optional] |
 | **country_code** | **String** | ISO 3166-1 alpha 2 country code. | [optional] |

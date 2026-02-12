@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/email-address | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportEmailAddressRequestAttributes**](ReportEmailAddressRequestAttributes.md) |  |  |
 
 ## Example

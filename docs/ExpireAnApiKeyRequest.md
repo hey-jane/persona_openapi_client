@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **meta** | [**ExpireAnApiKeyRequestMeta**](ExpireAnApiKeyRequestMeta.md) |  | [optional] |
+| **meta** | [**ExpireAnApiKeyRequestMeta**](ExpireAnApiKeyRequestMeta.md) |  |  |
 
 ## Example
 

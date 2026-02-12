@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | account | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 | **attributes** | [**AccountAttributes**](AccountAttributes.md) |  | [optional] |
 | **relationships** | [**AccountRelationships**](AccountRelationships.md) |  | [optional] |

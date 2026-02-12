@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Unique identifier for this list item. Starts with &#x60;liip_&#x60;. | [optional] |
-| **type** | **String** | list-item/ip-address | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ListItemBrowserFingerprintAttributes**](ListItemBrowserFingerprintAttributes.md) |  | [optional] |
 | **relationships** | [**ListItemIpAddressRelationships**](ListItemIpAddressRelationships.md) |  | [optional] |
 

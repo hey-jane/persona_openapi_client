@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Array**](List.md) |  | [optional] |
+| **data** | [**Array**](List.md) |  |  |
 
 ## Example
 

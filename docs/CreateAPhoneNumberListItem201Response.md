@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListItemPhoneNumber**](ListItemPhoneNumber.md) |  | [optional] |
+| **data** | [**ListItemPhoneNumber**](ListItemPhoneNumber.md) |  |  |
 
 ## Example
 

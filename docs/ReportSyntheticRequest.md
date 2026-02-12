@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/synthetic | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportSyntheticRequestAttributes**](ReportSyntheticRequestAttributes.md) |  |  |
 
 ## Example

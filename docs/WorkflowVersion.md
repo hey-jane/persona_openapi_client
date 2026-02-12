@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | workflow-version | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 | **attributes** | [**WorkflowVersionAttributes**](WorkflowVersionAttributes.md) |  | [optional] |
 | **relationships** | [**WorkflowVersionRelationships**](WorkflowVersionRelationships.md) |  | [optional] |

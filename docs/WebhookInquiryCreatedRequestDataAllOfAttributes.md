@@ -5,8 +5,8 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **created_at** | **Time** | Datetime when the event was created. | [optional] |
-| **name** | **String** | inquiry.created | [optional] |
-| **payload** | [**CreateAnInquiry201Response**](CreateAnInquiry201Response.md) |  | [optional] |
+| **name** | **String** |  | [optional] |
+| **payload** | [**WebhookInquiryCreatedRequestDataAllOfAttributesAllOfPayload**](WebhookInquiryCreatedRequestDataAllOfAttributesAllOfPayload.md) |  | [optional] |
 
 ## Example
 

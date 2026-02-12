@@ -4,9 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**InquirySession**](InquirySession.md) |  | [optional] |
-| **meta** | [**GenerateAOneTimeLinkForAnInquirySession200ResponseMeta**](GenerateAOneTimeLinkForAnInquirySession200ResponseMeta.md) |  | [optional] |
-| **included** | [**Array&lt;InquirySessionsIncludedObjectsInner&gt;**](InquirySessionsIncludedObjectsInner.md) |  | [optional] |
+| **data** | [**InquirySession**](InquirySession.md) |  |  |
+| **meta** | [**GenerateAOneTimeLink200ResponseMeta**](GenerateAOneTimeLink200ResponseMeta.md) |  |  |
+| **included** | [**Array&lt;InquirySessionsIncludedObjectsInner&gt;**](InquirySessionsIncludedObjectsInner.md) | Objects that _may_ be returned if specified via the &#x60;include&#x60; query parameter in the request. | [optional] |
 
 ## Example
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | list/email-address | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 | **attributes** | [**ListsSharedAttributes**](ListsSharedAttributes.md) |  | [optional] |
 | **relationships** | [**ListsEmailAddressesRelationships**](ListsEmailAddressesRelationships.md) |  | [optional] |

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Verification**](Verification.md) |  | [optional] |
+| **data** | [**Verification**](Verification.md) |  |  |
 
 ## Example
 

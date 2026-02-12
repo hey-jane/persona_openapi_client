@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Unique identifier for this list item. Starts with &#x60;liea_&#x60;. | [optional] |
-| **type** | **String** | list-item/email-address | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ListItemEmailAddressAttributes**](ListItemEmailAddressAttributes.md) |  | [optional] |
 | **relationships** | [**ListItemEmailAddressRelationships**](ListItemEmailAddressRelationships.md) |  | [optional] |
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**VerificationGovernmentId**](VerificationGovernmentId.md) |  | [optional] |
+| **data** | [**VerificationGovernmentId**](VerificationGovernmentId.md) |  |  |
 
 ## Example
 

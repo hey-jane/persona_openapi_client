@@ -19,7 +19,7 @@ All URIs are relative to *https://api.withpersona.com/api/v1*
 
 Account archived
 
-Webhook for the `account.archived` event. For more info see [Webhooks Overview](https://docs.withpersona.com/docs/webhooks).
+Webhook for the `account.archived` event. For more info see [Webhooks Overview](https://docs.withpersona.com/webhooks).
 
 ### Examples
 
@@ -34,11 +34,11 @@ end
 
 api_instance = PersonaAPIClient::WebhooksAccountEventsApi.new
 opts = {
-  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices).
+  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices).
   persona_webhook_attempts_made: , # Integer | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful.
   persona_webhook_attempts_left: , # Integer | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook.
   persona_webhook_first_attempted_at: , # Integer | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds.
-  webhook_account_archived_request:  # WebhookAccountArchivedRequest | 
+  webhook_account_redacted_request:  # WebhookAccountRedactedRequest | 
 }
 
 begin
@@ -71,11 +71,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices). | [optional] |
+| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices). | [optional] |
 | **persona_webhook_attempts_made** | **Integer** | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful. | [optional] |
 | **persona_webhook_attempts_left** | **Integer** | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook. | [optional] |
 | **persona_webhook_first_attempted_at** | **Integer** | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds. | [optional] |
-| **webhook_account_archived_request** | [**WebhookAccountArchivedRequest**](WebhookAccountArchivedRequest.md) |  | [optional] |
+| **webhook_account_redacted_request** | [**WebhookAccountRedactedRequest**](WebhookAccountRedactedRequest.md) |  | [optional] |
 
 ### Return type
 
@@ -97,7 +97,7 @@ nil (empty response body)
 
 Account consolidated
 
-Webhook for the `account.consolidated` event. For more info see [Webhooks Overview](https://docs.withpersona.com/docs/webhooks).
+Webhook for the `account.consolidated` event. For more info see [Webhooks Overview](https://docs.withpersona.com/webhooks).
 
 ### Examples
 
@@ -112,11 +112,11 @@ end
 
 api_instance = PersonaAPIClient::WebhooksAccountEventsApi.new
 opts = {
-  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices).
+  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices).
   persona_webhook_attempts_made: , # Integer | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful.
   persona_webhook_attempts_left: , # Integer | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook.
   persona_webhook_first_attempted_at: , # Integer | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds.
-  webhook_account_consolidated_request:  # WebhookAccountConsolidatedRequest | 
+  webhook_account_redacted_request:  # WebhookAccountRedactedRequest | 
 }
 
 begin
@@ -149,11 +149,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices). | [optional] |
+| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices). | [optional] |
 | **persona_webhook_attempts_made** | **Integer** | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful. | [optional] |
 | **persona_webhook_attempts_left** | **Integer** | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook. | [optional] |
 | **persona_webhook_first_attempted_at** | **Integer** | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds. | [optional] |
-| **webhook_account_consolidated_request** | [**WebhookAccountConsolidatedRequest**](WebhookAccountConsolidatedRequest.md) |  | [optional] |
+| **webhook_account_redacted_request** | [**WebhookAccountRedactedRequest**](WebhookAccountRedactedRequest.md) |  | [optional] |
 
 ### Return type
 
@@ -175,7 +175,7 @@ nil (empty response body)
 
 Account created
 
-Webhook for the `account.created` event. For more info see [Webhooks Overview](https://docs.withpersona.com/docs/webhooks).
+Webhook for the `account.created` event. For more info see [Webhooks Overview](https://docs.withpersona.com/webhooks).
 
 ### Examples
 
@@ -190,7 +190,7 @@ end
 
 api_instance = PersonaAPIClient::WebhooksAccountEventsApi.new
 opts = {
-  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices).
+  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices).
   persona_webhook_attempts_made: , # Integer | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful.
   persona_webhook_attempts_left: , # Integer | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook.
   persona_webhook_first_attempted_at: , # Integer | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds.
@@ -227,7 +227,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices). | [optional] |
+| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices). | [optional] |
 | **persona_webhook_attempts_made** | **Integer** | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful. | [optional] |
 | **persona_webhook_attempts_left** | **Integer** | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook. | [optional] |
 | **persona_webhook_first_attempted_at** | **Integer** | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds. | [optional] |
@@ -253,7 +253,7 @@ nil (empty response body)
 
 Account redacted
 
-Webhook for the `account.redacted` event. For more info see [Webhooks Overview](https://docs.withpersona.com/docs/webhooks).
+Webhook for the `account.redacted` event. For more info see [Webhooks Overview](https://docs.withpersona.com/webhooks).
 
 ### Examples
 
@@ -268,7 +268,7 @@ end
 
 api_instance = PersonaAPIClient::WebhooksAccountEventsApi.new
 opts = {
-  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices).
+  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices).
   persona_webhook_attempts_made: , # Integer | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful.
   persona_webhook_attempts_left: , # Integer | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook.
   persona_webhook_first_attempted_at: , # Integer | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds.
@@ -305,7 +305,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices). | [optional] |
+| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices). | [optional] |
 | **persona_webhook_attempts_made** | **Integer** | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful. | [optional] |
 | **persona_webhook_attempts_left** | **Integer** | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook. | [optional] |
 | **persona_webhook_first_attempted_at** | **Integer** | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds. | [optional] |
@@ -331,7 +331,7 @@ nil (empty response body)
 
 Account restored
 
-Webhook for the `account.restored` event. For more info see [Webhooks Overview](https://docs.withpersona.com/docs/webhooks).
+Webhook for the `account.restored` event. For more info see [Webhooks Overview](https://docs.withpersona.com/webhooks).
 
 ### Examples
 
@@ -346,11 +346,11 @@ end
 
 api_instance = PersonaAPIClient::WebhooksAccountEventsApi.new
 opts = {
-  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices).
+  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices).
   persona_webhook_attempts_made: , # Integer | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful.
   persona_webhook_attempts_left: , # Integer | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook.
   persona_webhook_first_attempted_at: , # Integer | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds.
-  webhook_account_restored_request:  # WebhookAccountRestoredRequest | 
+  webhook_account_redacted_request:  # WebhookAccountRedactedRequest | 
 }
 
 begin
@@ -383,11 +383,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices). | [optional] |
+| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices). | [optional] |
 | **persona_webhook_attempts_made** | **Integer** | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful. | [optional] |
 | **persona_webhook_attempts_left** | **Integer** | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook. | [optional] |
 | **persona_webhook_first_attempted_at** | **Integer** | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds. | [optional] |
-| **webhook_account_restored_request** | [**WebhookAccountRestoredRequest**](WebhookAccountRestoredRequest.md) |  | [optional] |
+| **webhook_account_redacted_request** | [**WebhookAccountRedactedRequest**](WebhookAccountRedactedRequest.md) |  | [optional] |
 
 ### Return type
 
@@ -409,7 +409,7 @@ nil (empty response body)
 
 Account tag added
 
-Webhook for the `account.tag-added` event. For more info see [Webhooks Overview](https://docs.withpersona.com/docs/webhooks).
+Webhook for the `account.tag-added` event. For more info see [Webhooks Overview](https://docs.withpersona.com/webhooks).
 
 ### Examples
 
@@ -424,11 +424,11 @@ end
 
 api_instance = PersonaAPIClient::WebhooksAccountEventsApi.new
 opts = {
-  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices).
+  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices).
   persona_webhook_attempts_made: , # Integer | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful.
   persona_webhook_attempts_left: , # Integer | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook.
   persona_webhook_first_attempted_at: , # Integer | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds.
-  webhook_account_tag_added_request:  # WebhookAccountTagAddedRequest | 
+  webhook_account_redacted_request:  # WebhookAccountRedactedRequest | 
 }
 
 begin
@@ -461,11 +461,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices). | [optional] |
+| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices). | [optional] |
 | **persona_webhook_attempts_made** | **Integer** | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful. | [optional] |
 | **persona_webhook_attempts_left** | **Integer** | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook. | [optional] |
 | **persona_webhook_first_attempted_at** | **Integer** | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds. | [optional] |
-| **webhook_account_tag_added_request** | [**WebhookAccountTagAddedRequest**](WebhookAccountTagAddedRequest.md) |  | [optional] |
+| **webhook_account_redacted_request** | [**WebhookAccountRedactedRequest**](WebhookAccountRedactedRequest.md) |  | [optional] |
 
 ### Return type
 
@@ -487,7 +487,7 @@ nil (empty response body)
 
 Account tag removed
 
-Webhook for the `account.tag-removed` event. For more info see [Webhooks Overview](https://docs.withpersona.com/docs/webhooks).
+Webhook for the `account.tag-removed` event. For more info see [Webhooks Overview](https://docs.withpersona.com/webhooks).
 
 ### Examples
 
@@ -502,11 +502,11 @@ end
 
 api_instance = PersonaAPIClient::WebhooksAccountEventsApi.new
 opts = {
-  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices).
+  persona_signature: , # String | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices).
   persona_webhook_attempts_made: , # Integer | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful.
   persona_webhook_attempts_left: , # Integer | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook.
   persona_webhook_first_attempted_at: , # Integer | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds.
-  webhook_account_tag_removed_request:  # WebhookAccountTagRemovedRequest | 
+  webhook_account_redacted_request:  # WebhookAccountRedactedRequest | 
 }
 
 begin
@@ -539,11 +539,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/docs/webhooks-best-practices). | [optional] |
+| **persona_signature** | **String** | Header. An HMAC that you should use to check that requests are authentic. Compare this value with your own digest, computed from the request body and your webhook secret. For more info see [Webhook Best Practices](https://docs.withpersona.com/webhooks-best-practices). | [optional] |
 | **persona_webhook_attempts_made** | **Integer** | The number of times that Persona has attempted to deliver this webhook. This value is incremented each time Persona attempts to deliver the webhook, regardless of whether the delivery was successful. | [optional] |
 | **persona_webhook_attempts_left** | **Integer** | The number of times that Persona will attempt to deliver this webhook. This value is decremented each time Persona attempts to deliver the webhook. | [optional] |
 | **persona_webhook_first_attempted_at** | **Integer** | The time at which Persona first attempted to deliver this webhook. This value is a Unix timestamp in seconds. | [optional] |
-| **webhook_account_tag_removed_request** | [**WebhookAccountTagRemovedRequest**](WebhookAccountTagRemovedRequest.md) |  | [optional] |
+| **webhook_account_redacted_request** | [**WebhookAccountRedactedRequest**](WebhookAccountRedactedRequest.md) |  | [optional] |
 
 ### Return type
 

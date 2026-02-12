@@ -17,7 +17,6 @@
 | **sanction_list** | [**Array&lt;ReportBusinessWatchlistAttributesAllOfSanctionListInner&gt;**](ReportBusinessWatchlistAttributesAllOfSanctionListInner.md) | Detailed information about matches found on sanction lists. | [optional] |
 | **fitness_probity_list** | [**Array&lt;ReportBusinessWatchlistAttributesAllOfFitnessProbityListInner&gt;**](ReportBusinessWatchlistAttributesAllOfFitnessProbityListInner.md) | Detailed information about matches found on fitness and probity lists. | [optional] |
 | **warning_list** | [**Array&lt;ReportBusinessWatchlistAttributesAllOfWarningListInner&gt;**](ReportBusinessWatchlistAttributesAllOfWarningListInner.md) | Detailed information about matches found on warning lists. | [optional] |
-| **run_history** | [**Array&lt;ReportRunHistoryInner&gt;**](ReportRunHistoryInner.md) | A history of the report runs | [optional] |
 
 ## Example
 
@@ -37,8 +36,7 @@ instance = PersonaAPIClient::ReportBusinessWatchlistAttributes.new(
   matched_lists: null,
   sanction_list: null,
   fitness_probity_list: null,
-  warning_list: null,
-  run_history: null
+  warning_list: null
 )
 ```
 

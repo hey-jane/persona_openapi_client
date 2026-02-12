@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/social-media | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportSocialMediaRequestAttributes**](ReportSocialMediaRequestAttributes.md) |  |  |
 
 ## Example

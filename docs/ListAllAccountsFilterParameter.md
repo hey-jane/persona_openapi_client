@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **reference_id** | **String** | Filter accounts by reference ID | [optional] |
+| **reference_id** | **String** | Filter accounts by reference ID. Can be a single reference ID or an array of reference IDs. | [optional] |
 
 ## Example
 

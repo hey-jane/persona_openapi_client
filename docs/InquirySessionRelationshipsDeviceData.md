@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | device | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 
 ## Example

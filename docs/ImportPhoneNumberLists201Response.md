@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ImporterListItemPhoneNumber**](ImporterListItemPhoneNumber.md) |  | [optional] |
+| **data** | [**ImporterListItemPhoneNumber**](ImporterListItemPhoneNumber.md) |  |  |
 
 ## Example
 

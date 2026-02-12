@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **prev** | **String** |  | [optional] |
-| **_next** | **String** |  | [optional] |
+| **prev** | **String** |  |  |
+| **_next** | **String** |  |  |
 
 ## Example
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListItemDeviceFingerprint**](ListItemDeviceFingerprint.md) |  | [optional] |
+| **data** | [**ListItemDeviceFingerprint**](ListItemDeviceFingerprint.md) |  |  |
 
 ## Example
 

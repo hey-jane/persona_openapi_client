@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListsEmailAddresses**](ListsEmailAddresses.md) |  | [optional] |
+| **data** | [**ListsEmailAddresses**](ListsEmailAddresses.md) |  |  |
 
 ## Example
 

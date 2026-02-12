@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
-| **type** | **String** | document/mobile-drivers-license | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**DocumentSharedAttributes**](DocumentSharedAttributes.md) |  | [optional] |
 | **relationships** | [**DocumentSharedRelationships**](DocumentSharedRelationships.md) |  | [optional] |
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | Case Queue | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | Unique identifier for the Case Queue | [optional] |
 | **attributes** | [**CaseQueueAttributes**](CaseQueueAttributes.md) |  | [optional] |
 

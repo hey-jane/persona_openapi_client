@@ -15,7 +15,6 @@
 | **tags** | **Array&lt;String&gt;** | Tags on the report | [optional] |
 | **query** | [**ReportPoliticallyExposedPersonAttributesAllOfQuery**](ReportPoliticallyExposedPersonAttributesAllOfQuery.md) |  | [optional] |
 | **result** | [**Array&lt;ReportPoliticallyExposedPersonAttributesAllOfResultInner&gt;**](ReportPoliticallyExposedPersonAttributesAllOfResultInner.md) |  | [optional] |
-| **run_history** | [**Array&lt;ReportRunHistoryInner&gt;**](ReportRunHistoryInner.md) | A history of the report runs | [optional] |
 | **ignore_list** | [**Array&lt;ReportPoliticallyExposedPersonAttributesAllOfIgnoreListInner&gt;**](ReportPoliticallyExposedPersonAttributesAllOfIgnoreListInner.md) |  | [optional] |
 
 ## Example
@@ -35,7 +34,6 @@ instance = PersonaAPIClient::ReportPoliticallyExposedPersonAttributes.new(
   tags: null,
   query: null,
   result: null,
-  run_history: null,
   ignore_list: null
 )
 ```

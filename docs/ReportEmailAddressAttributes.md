@@ -35,6 +35,9 @@
 | **email_is_spoofable** | **Boolean** | Whether the email can be spoofed. (E.G. not a strict SPF policy or DMARC not enforced. Deprecated) | [optional] |
 | **email_is_spf_strict** | **Boolean** | Whether there is a sufficiently strict SPF record (Deprecated) | [optional] |
 | **email_is_dmarc_enforced** | **Boolean** | Whether DMARC is configured correctly and enforced (Deprecated) | [optional] |
+| **age_estimated_13_plus** | **Boolean** | Whether email address user is 13 or older | [optional] |
+| **age_estimated_16_plus** | **Boolean** | Whether email address user is 16 or older | [optional] |
+| **age_estimated_18_plus** | **Boolean** | Whether email address user is 18 or older | [optional] |
 | **email_is_suspicious** | **Boolean** | Whether the email is suspicious or risky | [optional] |
 | **email_domain_exists** | **Boolean** | Whether the domain of the email exists | [optional] |
 | **email_domain** | **String** | The domain of the email | [optional] |
@@ -76,6 +79,9 @@ instance = PersonaAPIClient::ReportEmailAddressAttributes.new(
   email_is_spoofable: true,
   email_is_spf_strict: true,
   email_is_dmarc_enforced: true,
+  age_estimated_13_plus: true,
+  age_estimated_16_plus: true,
+  age_estimated_18_plus: true,
   email_is_suspicious: true,
   email_domain_exists: true,
   email_domain: gmail.com

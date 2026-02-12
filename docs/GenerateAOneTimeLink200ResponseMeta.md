@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **one_time_link** | **String** |  | [optional] |
-| **one_time_link_short** | **String** |  | [optional] |
+| **one_time_link** | **String** |  |  |
+| **one_time_link_short** | **String** |  |  |
 
 ## Example
 

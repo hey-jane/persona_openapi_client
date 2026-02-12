@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/phone-number | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportPhoneRiskRequestAttributes**](ReportPhoneRiskRequestAttributes.md) |  |  |
 
 ## Example

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/profile-non-authoritative | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportProfileNonAuthoritativeRequestAttributes**](ReportProfileNonAuthoritativeRequestAttributes.md) |  |  |
 
 ## Example

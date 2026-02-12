@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Transaction**](Transaction.md) |  | [optional] |
+| **data** | [**Transaction**](Transaction.md) |  |  |
 | **included** | [**Array&lt;RetrieveATransaction200ResponseIncludedInner&gt;**](RetrieveATransaction200ResponseIncludedInner.md) |  | [optional] |
 
 ## Example

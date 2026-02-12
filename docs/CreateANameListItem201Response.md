@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListItemName**](ListItemName.md) |  | [optional] |
+| **data** | [**ListItemName**](ListItemName.md) |  |  |
 
 ## Example
 

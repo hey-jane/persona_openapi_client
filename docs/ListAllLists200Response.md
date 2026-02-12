@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Array&lt;Array&gt;**](List.md) | An array of Events | [optional] |
-| **links** | [**ListAllAccounts200ResponseLinks**](ListAllAccounts200ResponseLinks.md) |  | [optional] |
+| **data** | [**Array&lt;Array&gt;**](List.md) | An array of Lists |  |
+| **links** | [**ListAllAccounts200ResponseLinks**](ListAllAccounts200ResponseLinks.md) |  |  |
 
 ## Example
 

@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
-| **type** | **String** | case-queue | [optional] |
+| **type** | **String** |  | [optional] |
 
 ## Example
 

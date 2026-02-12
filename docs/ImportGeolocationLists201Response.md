@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ImporterListItemGeolocation**](ImporterListItemGeolocation.md) |  | [optional] |
+| **data** | [**ImporterListItemGeolocation**](ImporterListItemGeolocation.md) |  |  |
 
 ## Example
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**VerificationDatabase**](VerificationDatabase.md) |  | [optional] |
+| **data** | [**VerificationDatabase**](VerificationDatabase.md) |  |  |
 
 ## Example
 

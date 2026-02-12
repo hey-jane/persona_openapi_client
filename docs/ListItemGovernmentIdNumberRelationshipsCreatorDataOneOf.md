@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | importer/government-id-number | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 
 ## Example

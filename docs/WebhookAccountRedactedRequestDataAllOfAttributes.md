@@ -5,8 +5,8 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **created_at** | **Time** | Datetime when the event was created. | [optional] |
-| **name** | **String** | account.redacted | [optional] |
-| **payload** | [**RetrieveAnAccount200Response**](RetrieveAnAccount200Response.md) |  | [optional] |
+| **name** | **String** |  | [optional] |
+| **payload** | [**WebhookAccountRedactedRequestDataAllOfAttributesAllOfPayload**](WebhookAccountRedactedRequestDataAllOfAttributesAllOfPayload.md) |  | [optional] |
 
 ## Example
 

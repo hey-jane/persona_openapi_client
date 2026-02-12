@@ -5,7 +5,7 @@ All URIs are relative to *https://api.withpersona.com/api/v1*
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**list_all_user_audit_logs**](UserAuditLogsApi.md#list_all_user_audit_logs) | **GET** /user-audit-logs | List all User Audit Logs |
-| [**retrieve_an_user_audit_log**](UserAuditLogsApi.md#retrieve_an_user_audit_log) | **GET** /user-audit-logs/{user-audit-log-id} | Retrieve an User Audit Log |
+| [**retrieve_a_user_audit_log**](UserAuditLogsApi.md#retrieve_a_user_audit_log) | **GET** /user-audit-logs/{user-audit-log-id} | Retrieve a User Audit Log |
 
 
 ## list_all_user_audit_logs
@@ -14,7 +14,7 @@ All URIs are relative to *https://api.withpersona.com/api/v1*
 
 List all User Audit Logs
 
-Returns a list of your organization’s user audit logs for up to the most recent 6 months.
+Returns a list of your organization’s user audit logs for up to the most recent 6 months.  Note: You must use a production API key to access this endpoint. For security reasons, we do not expose organization-level resources like user audit logs in Sandbox via API. Results are returned in reverse chronological order, with the most recently created objects first.
 
 ### Examples
 
@@ -29,11 +29,11 @@ end
 
 api_instance = PersonaAPIClient::UserAuditLogsApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
   page: PersonaAPIClient::ListAllAccountsPageParameter.new, # ListAllAccountsPageParameter | 
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -67,11 +67,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
 | **page** | [**ListAllAccountsPageParameter**](.md) |  | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
@@ -87,13 +87,13 @@ end
 - **Accept**: application/json
 
 
-## retrieve_an_user_audit_log
+## retrieve_a_user_audit_log
 
-> <RetrieveAnUserAuditLog200Response> retrieve_an_user_audit_log(user_audit_log_id, opts)
+> <RetrieveAUserAuditLog200Response> retrieve_a_user_audit_log(user_audit_log_id, opts)
 
-Retrieve an User Audit Log
+Retrieve a User Audit Log
 
-Retrieves the details of an existing user audit logs for up to the most recent 6 months.
+Retrieves the details of an existing user audit logs for up to the most recent 6 months.  Note: You must use a production API key to access this endpoint. For security reasons, we do not expose organization-level resources like user audit logs in Sandbox via API.
 
 ### Examples
 
@@ -109,37 +109,37 @@ end
 api_instance = PersonaAPIClient::UserAuditLogsApi.new
 user_audit_log_id = 'user_audit_log_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
-  # Retrieve an User Audit Log
-  result = api_instance.retrieve_an_user_audit_log(user_audit_log_id, opts)
+  # Retrieve a User Audit Log
+  result = api_instance.retrieve_a_user_audit_log(user_audit_log_id, opts)
   p result
 rescue PersonaAPIClient::ApiError => e
-  puts "Error when calling UserAuditLogsApi->retrieve_an_user_audit_log: #{e}"
+  puts "Error when calling UserAuditLogsApi->retrieve_a_user_audit_log: #{e}"
 end
 ```
 
-#### Using the retrieve_an_user_audit_log_with_http_info variant
+#### Using the retrieve_a_user_audit_log_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<RetrieveAnUserAuditLog200Response>, Integer, Hash)> retrieve_an_user_audit_log_with_http_info(user_audit_log_id, opts)
+> <Array(<RetrieveAUserAuditLog200Response>, Integer, Hash)> retrieve_a_user_audit_log_with_http_info(user_audit_log_id, opts)
 
 ```ruby
 begin
-  # Retrieve an User Audit Log
-  data, status_code, headers = api_instance.retrieve_an_user_audit_log_with_http_info(user_audit_log_id, opts)
+  # Retrieve a User Audit Log
+  data, status_code, headers = api_instance.retrieve_a_user_audit_log_with_http_info(user_audit_log_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <RetrieveAnUserAuditLog200Response>
+  p data # => <RetrieveAUserAuditLog200Response>
 rescue PersonaAPIClient::ApiError => e
-  puts "Error when calling UserAuditLogsApi->retrieve_an_user_audit_log_with_http_info: #{e}"
+  puts "Error when calling UserAuditLogsApi->retrieve_a_user_audit_log_with_http_info: #{e}"
 end
 ```
 
@@ -148,15 +148,15 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **user_audit_log_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
-[**RetrieveAnUserAuditLog200Response**](RetrieveAnUserAuditLog200Response.md)
+[**RetrieveAUserAuditLog200Response**](RetrieveAUserAuditLog200Response.md)
 
 ### Authorization
 

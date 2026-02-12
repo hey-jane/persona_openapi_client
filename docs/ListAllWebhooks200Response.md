@@ -4,9 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Array&lt;Webhook&gt;**](Webhook.md) | An array of Webhooks | [optional] |
-| **links** | [**ListAllApiKeys200ResponseLinks**](ListAllApiKeys200ResponseLinks.md) |  | [optional] |
-| **included** | **Array&lt;Object&gt;** | Excluded from the response by default. Will be an empty array when the &#x60;include&#x60; query parameter in the request was explicitly set to empty. | [optional] |
+| **data** | [**Array&lt;Webhook&gt;**](Webhook.md) | An array of Webhooks |  |
+| **links** | [**ListAllReports200ResponseLinks**](ListAllReports200ResponseLinks.md) |  |  |
 
 ## Example
 
@@ -15,8 +14,7 @@ require 'persona_api_client'
 
 instance = PersonaAPIClient::ListAllWebhooks200Response.new(
   data: null,
-  links: null,
-  included: null
+  links: null
 )
 ```
 

@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Array&lt;Account&gt;**](Account.md) | An array of Accounts | [optional] |
-| **links** | [**ListAllAccounts200ResponseLinks**](ListAllAccounts200ResponseLinks.md) |  | [optional] |
+| **data** | [**Array&lt;Account&gt;**](Account.md) | An array of Accounts |  |
+| **links** | [**ListAllAccounts200ResponseLinks**](ListAllAccounts200ResponseLinks.md) |  |  |
 
 ## Example
 

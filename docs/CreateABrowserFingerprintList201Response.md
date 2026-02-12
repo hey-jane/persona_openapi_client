@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListsBrowserFingerprints**](ListsBrowserFingerprints.md) |  | [optional] |
+| **data** | [**ListsBrowserFingerprints**](ListsBrowserFingerprints.md) |  |  |
 
 ## Example
 

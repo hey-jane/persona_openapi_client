@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | importer/email-address | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 
 ## Example

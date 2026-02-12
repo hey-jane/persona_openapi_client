@@ -21,8 +21,8 @@
 | **birthdate** | **String** | The input DOB in YYYY-MM-DD format | [optional] |
 | **country_code** | **String** | The input search country in alpha2 format | [optional] |
 | **related_sources** | [**Array&lt;ReportAdverseMediaAttributesAllOfRelatedSourcesInner&gt;**](ReportAdverseMediaAttributesAllOfRelatedSourcesInner.md) | The sources that matched for the search | [optional] |
-| **ignore_list_media** | **Object** |  | [optional] |
-| **ignore_list_entity** | **Array&lt;Object&gt;** |  | [optional] |
+| **ignore_list_media** | **Hash&lt;String, Object&gt;** |  | [optional] |
+| **ignore_list_entity** | **Array&lt;Hash&lt;String, Object&gt;&gt;** |  | [optional] |
 
 ## Example
 

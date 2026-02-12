@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Unique identifier for this list item. Starts with &#x60;lic_&#x60;. | [optional] |
-| **type** | **String** | list-item/country | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ListItemCountryAttributes**](ListItemCountryAttributes.md) |  | [optional] |
 | **relationships** | [**ListItemBrowserFingerprintRelationships**](ListItemBrowserFingerprintRelationships.md) |  | [optional] |
 

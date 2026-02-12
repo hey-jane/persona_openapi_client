@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | transaction-label | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | Unique identifier for this Transaction Label. Starts with &#x60;txnl_&#x60;. | [optional] |
 
 ## Example

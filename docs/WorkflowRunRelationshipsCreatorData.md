@@ -14,7 +14,6 @@ require 'persona_api_client'
 PersonaAPIClient::WorkflowRunRelationshipsCreatorData.openapi_one_of
 # =>
 # [
-#   :'Object',
 #   :'WorkflowRunRelationshipsCreatorDataOneOf',
 #   :'WorkflowRunRelationshipsCreatorDataOneOf1',
 #   :'WorkflowRunRelationshipsCreatorDataOneOf2'
@@ -31,7 +30,7 @@ Find the appropriate object from the `openapi_one_of` list and casts the data in
 require 'persona_api_client'
 
 PersonaAPIClient::WorkflowRunRelationshipsCreatorData.build(data)
-# => #<Object:0x00007fdd4aab02a0>
+# => #<WorkflowRunRelationshipsCreatorDataOneOf:0x00007fdd4aab02a0>
 
 PersonaAPIClient::WorkflowRunRelationshipsCreatorData.build(data_that_doesnt_match)
 # => nil
@@ -45,7 +44,6 @@ PersonaAPIClient::WorkflowRunRelationshipsCreatorData.build(data_that_doesnt_mat
 
 #### Return type
 
-- `Object`
 - `WorkflowRunRelationshipsCreatorDataOneOf`
 - `WorkflowRunRelationshipsCreatorDataOneOf1`
 - `WorkflowRunRelationshipsCreatorDataOneOf2`

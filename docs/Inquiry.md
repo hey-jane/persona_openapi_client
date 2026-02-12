@@ -4,10 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | inquiry | [optional] |
-| **id** | **String** |  | [optional] |
-| **attributes** | [**InquiryAttributes**](InquiryAttributes.md) |  | [optional] |
-| **relationships** | [**InquiryRelationships**](InquiryRelationships.md) |  | [optional] |
+| **type** | **String** |  |  |
+| **id** | **String** |  |  |
+| **attributes** | [**InquiryAttributes**](InquiryAttributes.md) |  |  |
+| **relationships** | [**InquiryRelationships**](InquiryRelationships.md) |  |  |
 
 ## Example
 

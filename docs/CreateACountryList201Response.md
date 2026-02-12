@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListsCountries**](ListsCountries.md) |  | [optional] |
+| **data** | [**ListsCountries**](ListsCountries.md) |  |  |
 
 ## Example
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**VerificationEmailAddress**](VerificationEmailAddress.md) |  | [optional] |
+| **data** | [**VerificationEmailAddress**](VerificationEmailAddress.md) |  |  |
 
 ## Example
 

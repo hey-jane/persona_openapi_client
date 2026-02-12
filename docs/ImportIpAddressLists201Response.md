@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ImporterListItemIpAddress**](ImporterListItemIpAddress.md) |  | [optional] |
+| **data** | [**ImporterListItemIpAddress**](ImporterListItemIpAddress.md) |  |  |
 
 ## Example
 

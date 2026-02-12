@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | verification/database | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | The token of the verification | [optional] |
 | **attributes** | [**VerificationDatabaseAttributes**](VerificationDatabaseAttributes.md) |  | [optional] |
 | **relationships** | [**VerificationSharedRelationships**](VerificationSharedRelationships.md) |  | [optional] |

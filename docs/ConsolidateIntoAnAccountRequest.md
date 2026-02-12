@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **meta** | [**ConsolidateIntoAnAccountRequestMeta**](ConsolidateIntoAnAccountRequestMeta.md) |  | [optional] |
+| **meta** | [**ConsolidateIntoAnAccountRequestMeta**](ConsolidateIntoAnAccountRequestMeta.md) |  |  |
 
 ## Example
 

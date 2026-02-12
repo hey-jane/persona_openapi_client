@@ -7,7 +7,7 @@
 | **akas** | **Array&lt;String&gt;** |  | [optional] |
 | **birthdates** | **Array&lt;String&gt;** |  | [optional] |
 | **match_types** | **Array&lt;String&gt;** |  | [optional] |
-| **media** | [**Array&lt;ReportAdverseMediaAttributesAllOfRelatedSourcesInnerMediaInner&gt;**](ReportAdverseMediaAttributesAllOfRelatedSourcesInnerMediaInner.md) |  | [optional] |
+| **media** | [**Array&lt;ReportBusinessAdverseMediaAttributesAllOfRelatedSourcesInnerMediaInner&gt;**](ReportBusinessAdverseMediaAttributesAllOfRelatedSourcesInnerMediaInner.md) |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **sources** | [**Array&lt;ReportBusinessAdverseMediaAttributesAllOfRelatedSourcesInnerSourcesInner&gt;**](ReportBusinessAdverseMediaAttributesAllOfRelatedSourcesInnerSourcesInner.md) |  | [optional] |
 | **id** | **String** |  | [optional] |

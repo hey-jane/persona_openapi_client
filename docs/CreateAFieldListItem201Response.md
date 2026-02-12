@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListItemField**](ListItemField.md) |  | [optional] |
+| **data** | [**ListItemField**](ListItemField.md) |  |  |
 
 ## Example
 

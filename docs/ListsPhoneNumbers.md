@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | list/phone-number | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 | **attributes** | [**ListsSharedAttributes**](ListsSharedAttributes.md) |  | [optional] |
 | **relationships** | [**ListsPhoneNumbersRelationships**](ListsPhoneNumbersRelationships.md) |  | [optional] |

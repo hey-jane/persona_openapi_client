@@ -26,7 +26,8 @@
 | **address_postal_code** | **String** | ZIP or postal code. | [optional] |
 | **address_postal_code_abbr** | **String** | ZIP or postal code abbreviation (if applicable). | [optional] |
 | **phone_number** | **String** | Phone number. | [optional] |
-| **identity_records** | [**Array&lt;ReportProfileAttributesAllOfIdentityRecordsInner&gt;**](ReportProfileAttributesAllOfIdentityRecordsInner.md) | Detailed identity records if available. | [optional] |
+| **identity_records** | [**Array&lt;ReportProfileAttributesAllOfIdentityRecordsInner&gt;**](ReportProfileAttributesAllOfIdentityRecordsInner.md) | Detailed identity records which passed matching logic, if available. | [optional] |
+| **omitted_identity_records** | [**Array&lt;ReportProfileAttributesAllOfIdentityRecordsInner&gt;**](ReportProfileAttributesAllOfIdentityRecordsInner.md) | Detailed identity records which did not pass matching logic, if available. | [optional] |
 
 ## Example
 
@@ -56,7 +57,8 @@ instance = PersonaAPIClient::ReportProfileAttributes.new(
   address_postal_code: null,
   address_postal_code_abbr: null,
   phone_number: null,
-  identity_records: null
+  identity_records: null,
+  omitted_identity_records: null
 )
 ```
 

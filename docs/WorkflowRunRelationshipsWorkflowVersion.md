@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**WorkflowRunRelationshipsWorkflowVersionData**](WorkflowRunRelationshipsWorkflowVersionData.md) |  | [optional] |
+| **data** | [**WorkflowRelationshipsLatestPublishedVersionData**](WorkflowRelationshipsLatestPublishedVersionData.md) |  | [optional] |
 
 ## Example
 

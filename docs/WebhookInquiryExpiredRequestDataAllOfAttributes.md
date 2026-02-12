@@ -5,8 +5,8 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **created_at** | **Time** | Datetime when the event was created. | [optional] |
-| **name** | **String** | inquiry.expired | [optional] |
-| **payload** | [**CreateAnInquiry201Response**](CreateAnInquiry201Response.md) |  | [optional] |
+| **name** | **String** |  | [optional] |
+| **payload** | [**WebhookInquiryExpiredRequestDataAllOfAttributesAllOfPayload**](WebhookInquiryExpiredRequestDataAllOfAttributesAllOfPayload.md) |  | [optional] |
 
 ## Example
 

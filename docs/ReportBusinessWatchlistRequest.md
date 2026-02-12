@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/business-watchlist | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportBusinessWatchlistRequestAttributes**](ReportBusinessWatchlistRequestAttributes.md) |  |  |
 
 ## Example

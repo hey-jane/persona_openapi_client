@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**VerificationDatabaseSerpro**](VerificationDatabaseSerpro.md) |  | [optional] |
+| **data** | [**VerificationDatabaseSerpro**](VerificationDatabaseSerpro.md) |  |  |
 
 ## Example
 

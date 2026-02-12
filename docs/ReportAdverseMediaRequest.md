@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/adverse-media | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportAdverseMediaRequestAttributes**](ReportAdverseMediaRequestAttributes.md) |  |  |
 
 ## Example

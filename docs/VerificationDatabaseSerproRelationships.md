@@ -11,6 +11,7 @@
 | **transaction** | [**VerificationSharedRelationshipsTransaction**](VerificationSharedRelationshipsTransaction.md) |  | [optional] |
 | **verification_template** | [**VerificationSharedRelationshipsVerificationTemplate**](VerificationSharedRelationshipsVerificationTemplate.md) |  | [optional] |
 | **verification_template_version** | [**VerificationSharedRelationshipsVerificationTemplateVersion**](VerificationSharedRelationshipsVerificationTemplateVersion.md) |  | [optional] |
+| **accounts** | [**CaseRelationshipsAccounts**](CaseRelationshipsAccounts.md) |  | [optional] |
 | **selfie** | [**VerificationDatabaseSerproRelationshipsAllOfSelfie**](VerificationDatabaseSerproRelationshipsAllOfSelfie.md) |  | [optional] |
 
 ## Example
@@ -26,6 +27,7 @@ instance = PersonaAPIClient::VerificationDatabaseSerproRelationships.new(
   transaction: null,
   verification_template: null,
   verification_template_version: null,
+  accounts: null,
   selfie: null
 )
 ```

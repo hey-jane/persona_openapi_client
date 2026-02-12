@@ -30,6 +30,8 @@
 | **twitter_username** | **String** |  | [optional] |
 | **github_url** | **String** |  | [optional] |
 | **github_username** | **String** |  | [optional] |
+| **instagram_url** | **String** |  | [optional] |
+| **instagram_username** | **String** |  | [optional] |
 
 ## Example
 
@@ -62,7 +64,9 @@ instance = PersonaAPIClient::ReportSocialMediaAttributes.new(
   twitter_url: twitter.com/elonmusk,
   twitter_username: elonmusk,
   github_url: github.com/username,
-  github_username: username
+  github_username: username,
+  instagram_url: instagram.com/username,
+  instagram_username: username
 )
 ```
 

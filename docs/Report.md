@@ -17,7 +17,9 @@ PersonaAPIClient::Report.openapi_one_of
 #   :'ReportAddressLookup',
 #   :'ReportAdverseMedia',
 #   :'ReportBusinessAdverseMedia',
+#   :'ReportBusinessAssociatedPersons',
 #   :'ReportBusinessLookup',
+#   :'ReportBusinessRegistrationsLookup',
 #   :'ReportBusinessWatchlist',
 #   :'ReportCryptoAddressWatchlist',
 #   :'ReportEmailAddress',
@@ -60,7 +62,9 @@ PersonaAPIClient::Report.openapi_discriminator_mapping
 #   :'report/address-lookup' => :'ReportAddressLookup',
 #   :'report/adverse-media' => :'ReportAdverseMedia',
 #   :'report/business-adverse-media' => :'ReportBusinessAdverseMedia',
+#   :'report/business-associated-persons' => :'ReportBusinessAssociatedPersons',
 #   :'report/business-lookup' => :'ReportBusinessLookup',
+#   :'report/business-registrations-lookup' => :'ReportBusinessRegistrationsLookup',
 #   :'report/business-watchlist' => :'ReportBusinessWatchlist',
 #   :'report/crypto-address-watchlist' => :'ReportCryptoAddressWatchlist',
 #   :'report/email-address' => :'ReportEmailAddress',
@@ -102,7 +106,9 @@ PersonaAPIClient::Report.build(data_that_doesnt_match)
 - `ReportAddressLookup`
 - `ReportAdverseMedia`
 - `ReportBusinessAdverseMedia`
+- `ReportBusinessAssociatedPersons`
 - `ReportBusinessLookup`
+- `ReportBusinessRegistrationsLookup`
 - `ReportBusinessWatchlist`
 - `ReportCryptoAddressWatchlist`
 - `ReportEmailAddress`
