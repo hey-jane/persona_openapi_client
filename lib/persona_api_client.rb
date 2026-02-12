@@ -953,6 +953,8 @@ PersonaAPIClient.autoload :TransactionsApi, 'persona_api_client/api/transactions
 PersonaAPIClient.autoload :UserAuditLogsApi, 'persona_api_client/api/user_audit_logs_api'
 PersonaAPIClient.autoload :VerificationsApi, 'persona_api_client/api/verifications_api'
 PersonaAPIClient.autoload :WebhooksApi, 'persona_api_client/api/webhooks_api'
+PersonaAPIClient.autoload :WebhooksAccountEventsApi, 'persona_api_client/api/webhooks_account_events_api'
+PersonaAPIClient.autoload :WebhooksInquiryEventsApi, 'persona_api_client/api/webhooks_inquiry_events_api'
 PersonaAPIClient.autoload :WorkflowsApi, 'persona_api_client/api/workflows_api'
 
 module PersonaAPIClient
