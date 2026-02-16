@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report-template/watchlist | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | The ID of the Report Template | [optional] |
 | **attributes** | [**ReportTemplateWatchlistAttributes**](ReportTemplateWatchlistAttributes.md) |  | [optional] |
 | **meta** | [**ReportTemplateSharedMeta**](ReportTemplateSharedMeta.md) |  | [optional] |

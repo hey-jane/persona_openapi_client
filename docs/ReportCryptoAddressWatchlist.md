@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/crypto-address-watchlist | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | The ID of the report | [optional] |
 | **attributes** | [**ReportCryptoAddressWatchlistAttributes**](ReportCryptoAddressWatchlistAttributes.md) |  | [optional] |
 | **relationships** | [**ReportSharedRelationships**](ReportSharedRelationships.md) |  | [optional] |

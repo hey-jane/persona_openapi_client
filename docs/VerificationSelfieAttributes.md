@@ -11,7 +11,9 @@
 | **submitted_at_ts** | **Integer** | The time the verification was submitted in Unix timestamp format | [optional] |
 | **completed_at** | **Time** | The time the verification was completed in ISO 8601 format | [optional] |
 | **completed_at_ts** | **Integer** | The time the verification was completed in Unix timestamp format | [optional] |
+| **redacted_at** | **Time** | The time the verification was redacted in ISO 8601 format | [optional] |
 | **country_code** | **String** | ISO 3166-1 alpha 2 country code. | [optional] |
+| **tags** | **Array&lt;String&gt;** | Tags on the verification | [optional] |
 | **checks** | [**Array&lt;VerificationSharedAttributesChecksInner&gt;**](VerificationSharedAttributesChecksInner.md) |  | [optional] |
 | **capture_method** | **String** | Possible values: - photo - video  Do not assume this is a static enumeration; Persona may add new values in the future without a versioned update. | [optional] |
 | **center_photo_face_coordinates** | [**VerificationSelfieAttributesAllOfCenterPhotoFaceCoordinates**](VerificationSelfieAttributesAllOfCenterPhotoFaceCoordinates.md) |  | [optional] |
@@ -19,6 +21,7 @@
 | **document_similarity_score** | **Float** |  | [optional] |
 | **entity_confidence_reasons** | **Array&lt;String&gt;** |  | [optional] |
 | **left_photo_url** | **String** |  | [optional] |
+| **from_reusable_persona** | **Boolean** |  | [optional] |
 | **photo_urls** | [**Array&lt;VerificationSelfieAttributesAllOfPhotoUrlsInner&gt;**](VerificationSelfieAttributesAllOfPhotoUrlsInner.md) |  | [optional] |
 | **right_photo_url** | **String** |  | [optional] |
 | **selfie_similarity_score_left** | **Float** |  | [optional] |
@@ -38,7 +41,9 @@ instance = PersonaAPIClient::VerificationSelfieAttributes.new(
   submitted_at_ts: 1700098276,
   completed_at: 2023-11-16T01:31:16.000Z,
   completed_at_ts: 1700098276,
+  redacted_at: 2023-11-16T01:31:16.000Z,
   country_code: US,
+  tags: null,
   checks: null,
   capture_method: null,
   center_photo_face_coordinates: null,
@@ -46,6 +51,7 @@ instance = PersonaAPIClient::VerificationSelfieAttributes.new(
   document_similarity_score: null,
   entity_confidence_reasons: null,
   left_photo_url: https://files.withpersona.com/...,
+  from_reusable_persona: null,
   photo_urls: null,
   right_photo_url: https://files.withpersona.com/...,
   selfie_similarity_score_left: null,

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/crypto-address-watchlist | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportCryptoAddressWatchlistRequestAttributes**](ReportCryptoAddressWatchlistRequestAttributes.md) |  |  |
 
 ## Example

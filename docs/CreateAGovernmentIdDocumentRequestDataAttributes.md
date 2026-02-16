@@ -10,7 +10,7 @@
 | **inquiry_id** | **String** |  |  |
 | **account_id** | **String** |  | [optional] |
 | **selected_country_code** | **String** |  | [optional] |
-| **selected_id_class** | **Array&lt;String&gt;** |  | [optional] |
+| **selected_id_class** | **AnyOfstring&lt;String&gt;** |  | [optional] |
 
 ## Example
 

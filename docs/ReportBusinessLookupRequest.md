@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/business-lookup | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportBusinessLookupRequestAttributes**](ReportBusinessLookupRequestAttributes.md) |  |  |
 
 ## Example

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ImporterListItemEmailAddress**](ImporterListItemEmailAddress.md) |  | [optional] |
+| **data** | [**ImporterListItemEmailAddress**](ImporterListItemEmailAddress.md) |  |  |
 
 ## Example
 

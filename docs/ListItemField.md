@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Unique identifier for this list item. Starts with &#x60;liif_&#x60;. | [optional] |
-| **type** | **String** | list-item/field | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ListItemFieldAttributes**](ListItemFieldAttributes.md) |  | [optional] |
 | **relationships** | [**ListItemBrowserFingerprintRelationships**](ListItemBrowserFingerprintRelationships.md) |  | [optional] |
 

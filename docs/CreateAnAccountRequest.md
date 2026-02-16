@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **data** | [**CreateAnAccountRequestData**](CreateAnAccountRequestData.md) |  | [optional] |
-| **meta** | **Hash&lt;String, Object&gt;** |  | [optional] |
+| **meta** | [**CreateAnAccountRequestMeta**](CreateAnAccountRequestMeta.md) |  | [optional] |
 
 ## Example
 

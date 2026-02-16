@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/watchlist | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | The ID of the report | [optional] |
 | **attributes** | [**ReportWatchlistAttributes**](ReportWatchlistAttributes.md) |  | [optional] |
 | **relationships** | [**ReportSharedRelationships**](ReportSharedRelationships.md) |  | [optional] |

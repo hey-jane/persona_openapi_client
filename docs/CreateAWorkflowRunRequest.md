@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**CreateAWorkflowRunRequestData**](CreateAWorkflowRunRequestData.md) |  | [optional] |
+| **data** | [**CreateAWorkflowRunRequestData**](CreateAWorkflowRunRequestData.md) |  |  |
 
 ## Example
 

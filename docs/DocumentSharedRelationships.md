@@ -8,7 +8,7 @@
 | **template** | [**DocumentSharedRelationshipsTemplate**](DocumentSharedRelationshipsTemplate.md) |  | [optional] |
 | **inquiry_template_version** | [**DocumentSharedRelationshipsInquiryTemplateVersion**](DocumentSharedRelationshipsInquiryTemplateVersion.md) |  | [optional] |
 | **inquiry_template** | [**DocumentSharedRelationshipsInquiryTemplate**](DocumentSharedRelationshipsInquiryTemplate.md) |  | [optional] |
-| **transaction** | [**DocumentSharedRelationshipsTransaction**](DocumentSharedRelationshipsTransaction.md) |  | [optional] |
+| **transaction** | [**VerificationSharedRelationshipsTransaction**](VerificationSharedRelationshipsTransaction.md) |  | [optional] |
 | **document_files** | [**DocumentSharedRelationshipsDocumentFiles**](DocumentSharedRelationshipsDocumentFiles.md) |  | [optional] |
 
 ## Example

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | list/ip-address | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 | **attributes** | [**ListsSharedAttributes**](ListsSharedAttributes.md) |  | [optional] |
 | **relationships** | [**ListsIpAddressesRelationships**](ListsIpAddressesRelationships.md) |  | [optional] |

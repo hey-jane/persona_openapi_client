@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | Case Template | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | Unique identifier for the Case Template | [optional] |
 | **attributes** | [**CaseTemplateAttributes**](CaseTemplateAttributes.md) |  | [optional] |
 

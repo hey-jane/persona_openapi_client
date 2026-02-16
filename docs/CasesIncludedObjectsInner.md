@@ -1,175 +1,24 @@
 # PersonaAPIClient::CasesIncludedObjectsInner
 
-## Class instance methods
+## Properties
 
-### `openapi_one_of`
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **type** | **String** |  |  |
+| **id** | **String** | The token of the verification |  |
+| **attributes** | [**VerificationSelfieAttributes**](VerificationSelfieAttributes.md) |  |  |
+| **relationships** | [**VerificationSharedRelationships**](VerificationSharedRelationships.md) |  |  |
 
-Returns the list of classes defined in oneOf.
-
-#### Example
-
-```ruby
-require 'persona_api_client'
-
-PersonaAPIClient::CasesIncludedObjectsInner.openapi_one_of
-# =>
-# [
-#   :'Account',
-#   :'CaseComment',
-#   :'CaseQueue',
-#   :'CaseTemplate',
-#   :'Inquiry',
-#   :'ReportAddressLookup',
-#   :'ReportAdverseMedia',
-#   :'ReportBusinessAdverseMedia',
-#   :'ReportBusinessLookup',
-#   :'ReportBusinessWatchlist',
-#   :'ReportCryptoAddressWatchlist',
-#   :'ReportEmailAddress',
-#   :'ReportPhoneRisk',
-#   :'ReportPoliticallyExposedPerson',
-#   :'ReportProfile',
-#   :'ReportProfileNonAuthoritative',
-#   :'ReportSentilinkScores',
-#   :'ReportSocialMedia',
-#   :'ReportSynthetic',
-#   :'ReportWatchlist',
-#   :'Transaction',
-#   :'VerificationAamva',
-#   :'VerificationDatabase',
-#   :'VerificationDatabaseEcbsv',
-#   :'VerificationDatabasePhoneCarrier',
-#   :'VerificationDatabaseSerpro',
-#   :'VerificationDatabaseStandard',
-#   :'VerificationDatabaseTin',
-#   :'VerificationDocument',
-#   :'VerificationEmailAddress',
-#   :'VerificationGovernmentId',
-#   :'VerificationGovernmentIdNfc',
-#   :'VerificationPhoneNumber',
-#   :'VerificationSelfie'
-# ]
-```
-
-### `openapi_discriminator_name`
-
-Returns the discriminator's property name.
-
-#### Example
+## Example
 
 ```ruby
 require 'persona_api_client'
 
-PersonaAPIClient::CasesIncludedObjectsInner.openapi_discriminator_name
-# => :'type'
+instance = PersonaAPIClient::CasesIncludedObjectsInner.new(
+  type: null,
+  id: ver_ABC123,
+  attributes: null,
+  relationships: null
+)
 ```
-
-### `openapi_discriminator_name`
-
-Returns the discriminator's mapping.
-
-#### Example
-
-```ruby
-require 'persona_api_client'
-
-PersonaAPIClient::CasesIncludedObjectsInner.openapi_discriminator_mapping
-# =>
-# {
-#   :'account' => :'Account',
-#   :'case-comment' => :'CaseComment',
-#   :'case-queue' => :'CaseQueue',
-#   :'case-template' => :'CaseTemplate',
-#   :'inquiry' => :'Inquiry',
-#   :'report/address-lookup' => :'ReportAddressLookup',
-#   :'report/adverse-media' => :'ReportAdverseMedia',
-#   :'report/business-adverse-media' => :'ReportBusinessAdverseMedia',
-#   :'report/business-lookup' => :'ReportBusinessLookup',
-#   :'report/business-watchlist' => :'ReportBusinessWatchlist',
-#   :'report/crypto-address-watchlist' => :'ReportCryptoAddressWatchlist',
-#   :'report/email-address' => :'ReportEmailAddress',
-#   :'report/integration/sentilink-scores' => :'ReportSentilinkScores',
-#   :'report/phone-number' => :'ReportPhoneRisk',
-#   :'report/politically-exposed-person' => :'ReportPoliticallyExposedPerson',
-#   :'report/profile' => :'ReportProfile',
-#   :'report/profile-non-authoritative' => :'ReportProfileNonAuthoritative',
-#   :'report/social-media' => :'ReportSocialMedia',
-#   :'report/synthetic' => :'ReportSynthetic',
-#   :'report/watchlist' => :'ReportWatchlist',
-#   :'transaction' => :'Transaction',
-#   :'verification/aamva' => :'VerificationAamva',
-#   :'verification/database' => :'VerificationDatabase',
-#   :'verification/database-ecbsv' => :'VerificationDatabaseEcbsv',
-#   :'verification/database-phone-carrier' => :'VerificationDatabasePhoneCarrier',
-#   :'verification/database-serpro' => :'VerificationDatabaseSerpro',
-#   :'verification/database-standard' => :'VerificationDatabaseStandard',
-#   :'verification/database-tin' => :'VerificationDatabaseTin',
-#   :'verification/document' => :'VerificationDocument',
-#   :'verification/email-address' => :'VerificationEmailAddress',
-#   :'verification/government-id' => :'VerificationGovernmentId',
-#   :'verification/government-id-nfc' => :'VerificationGovernmentIdNfc',
-#   :'verification/phone-number' => :'VerificationPhoneNumber',
-#   :'verification/selfie' => :'VerificationSelfie'
-# }
-```
-
-### build
-
-Find the appropriate object from the `openapi_one_of` list and casts the data into it.
-
-#### Example
-
-```ruby
-require 'persona_api_client'
-
-PersonaAPIClient::CasesIncludedObjectsInner.build(data)
-# => #<Account:0x00007fdd4aab02a0>
-
-PersonaAPIClient::CasesIncludedObjectsInner.build(data_that_doesnt_match)
-# => nil
-```
-
-#### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| **data** | **Mixed** | data to be matched against the list of oneOf items |
-
-#### Return type
-
-- `Account`
-- `CaseComment`
-- `CaseQueue`
-- `CaseTemplate`
-- `Inquiry`
-- `ReportAddressLookup`
-- `ReportAdverseMedia`
-- `ReportBusinessAdverseMedia`
-- `ReportBusinessLookup`
-- `ReportBusinessWatchlist`
-- `ReportCryptoAddressWatchlist`
-- `ReportEmailAddress`
-- `ReportPhoneRisk`
-- `ReportPoliticallyExposedPerson`
-- `ReportProfile`
-- `ReportProfileNonAuthoritative`
-- `ReportSentilinkScores`
-- `ReportSocialMedia`
-- `ReportSynthetic`
-- `ReportWatchlist`
-- `Transaction`
-- `VerificationAamva`
-- `VerificationDatabase`
-- `VerificationDatabaseEcbsv`
-- `VerificationDatabasePhoneCarrier`
-- `VerificationDatabaseSerpro`
-- `VerificationDatabaseStandard`
-- `VerificationDatabaseTin`
-- `VerificationDocument`
-- `VerificationEmailAddress`
-- `VerificationGovernmentId`
-- `VerificationGovernmentIdNfc`
-- `VerificationPhoneNumber`
-- `VerificationSelfie`
-- `nil` (if no type matches)
 

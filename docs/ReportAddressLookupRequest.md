@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/address-lookup | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportAddressLookupRequestAttributes**](ReportAddressLookupRequestAttributes.md) |  |  |
 
 ## Example

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Array&lt;CreateAGovernmentIdDocumentRequestDataAttributesBackPhotoDataInner&gt;**](CreateAGovernmentIdDocumentRequestDataAttributesBackPhotoDataInner.md) |  | [optional] |
+| **data** | [**Array&lt;CreateAGovernmentIdDocumentRequestDataAttributesFrontPhotoDataInner&gt;**](CreateAGovernmentIdDocumentRequestDataAttributesFrontPhotoDataInner.md) |  | [optional] |
 
 ## Example
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/business-lookup | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | The ID of the report | [optional] |
 | **attributes** | [**ReportBusinessLookupAttributes**](ReportBusinessLookupAttributes.md) |  | [optional] |
 | **relationships** | [**ReportSharedRelationships**](ReportSharedRelationships.md) |  | [optional] |

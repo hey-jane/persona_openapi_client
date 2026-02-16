@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | list/name | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 | **attributes** | [**ListsNamesAttributes**](ListsNamesAttributes.md) |  | [optional] |
 | **relationships** | [**ListsNamesRelationships**](ListsNamesRelationships.md) |  | [optional] |

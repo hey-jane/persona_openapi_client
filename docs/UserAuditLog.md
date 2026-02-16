@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | user-audit-log | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 | **attributes** | [**UserAuditLogAttributes**](UserAuditLogAttributes.md) |  | [optional] |
 | **relationships** | [**UserAuditLogRelationships**](UserAuditLogRelationships.md) |  | [optional] |

@@ -18,8 +18,7 @@ PersonaAPIClient::ListItemGovernmentIdNumberRelationshipsCreatorData.openapi_one
 #   :'ListItemBrowserFingerprintRelationshipsCreatorDataOneOf1',
 #   :'ListItemBrowserFingerprintRelationshipsCreatorDataOneOf2',
 #   :'ListItemBrowserFingerprintRelationshipsCreatorDataOneOf3',
-#   :'ListItemGovernmentIdNumberRelationshipsCreatorDataOneOf',
-#   :'Object'
+#   :'ListItemGovernmentIdNumberRelationshipsCreatorDataOneOf'
 # ]
 ```
 
@@ -52,6 +51,5 @@ PersonaAPIClient::ListItemGovernmentIdNumberRelationshipsCreatorData.build(data_
 - `ListItemBrowserFingerprintRelationshipsCreatorDataOneOf2`
 - `ListItemBrowserFingerprintRelationshipsCreatorDataOneOf3`
 - `ListItemGovernmentIdNumberRelationshipsCreatorDataOneOf`
-- `Object`
 - `nil` (if no type matches)
 

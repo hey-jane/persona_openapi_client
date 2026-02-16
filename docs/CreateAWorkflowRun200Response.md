@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**WorkflowRun**](WorkflowRun.md) |  | [optional] |
-| **included** | [**Array&lt;WorkflowRunIncludedObjectsInner&gt;**](WorkflowRunIncludedObjectsInner.md) |  | [optional] |
+| **data** | [**WorkflowRun**](WorkflowRun.md) |  |  |
+| **included** | [**Array&lt;WorkflowRunIncludedObjectsInner&gt;**](WorkflowRunIncludedObjectsInner.md) | Objects that _may_ be returned if specified via the &#x60;include&#x60; query parameter in the request. | [optional] |
 
 ## Example
 

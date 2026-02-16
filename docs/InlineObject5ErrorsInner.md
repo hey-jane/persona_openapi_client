@@ -4,9 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **title** | **String** |  | [optional] |
+| **title** | **String** | Conflict | [optional] |
 | **details** | **String** |  | [optional] |
-| **source** | [**InlineObject5ErrorsInnerSource**](InlineObject5ErrorsInnerSource.md) |  | [optional] |
+| **meta** | **Hash&lt;String, Object&gt;** | Additional metadata about the error | [optional] |
 
 ## Example
 
@@ -16,7 +16,7 @@ require 'persona_api_client'
 instance = PersonaAPIClient::InlineObject5ErrorsInner.new(
   title: null,
   details: null,
-  source: null
+  meta: null
 )
 ```
 

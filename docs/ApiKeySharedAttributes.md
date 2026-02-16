@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** |  | [optional] |
 | **note** | **String** |  | [optional] |
-| **api_version** | **Date** |  | [optional] |
+| **api_version** | [**ApiVersion**](ApiVersion.md) |  | [optional] |
 | **api_key_inflection** | **String** |  | [optional] |
 | **api_attributes_blocklist** | **Array&lt;String&gt;** |  | [optional] |
 | **permissions** | **Array&lt;String&gt;** |  | [optional] |

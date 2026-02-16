@@ -4,8 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Inquiry**](Inquiry.md) |  | [optional] |
-| **included** | [**Array&lt;InquiryIncludedObjectsInner&gt;**](InquiryIncludedObjectsInner.md) |  | [optional] |
+| **data** | [**Inquiry**](Inquiry.md) |  |  |
+| **included** | [**Array&lt;InquiryIncludedObjectsInner&gt;**](InquiryIncludedObjectsInner.md) | Objects that _may_ be returned if specified via the &#x60;include&#x60; query parameter in the request. | [optional] |
+| **meta** | [**CreateAnInquiry201ResponseMeta**](CreateAnInquiry201ResponseMeta.md) |  |  |
 
 ## Example
 
@@ -14,7 +15,8 @@ require 'persona_api_client'
 
 instance = PersonaAPIClient::CreateAnInquiry201Response.new(
   data: null,
-  included: null
+  included: null,
+  meta: null
 )
 ```
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListsNames**](ListsNames.md) |  | [optional] |
+| **data** | [**ListsNames**](ListsNames.md) |  |  |
 
 ## Example
 

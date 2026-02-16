@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**VerificationDatabaseEcbsv**](VerificationDatabaseEcbsv.md) |  | [optional] |
+| **data** | [**VerificationDatabaseEcbsv**](VerificationDatabaseEcbsv.md) |  |  |
 
 ## Example
 

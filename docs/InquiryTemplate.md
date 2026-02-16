@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | inquiry-template | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 | **attributes** | [**InquiryTemplateAttributes**](InquiryTemplateAttributes.md) |  | [optional] |
 | **relationships** | [**InquiryTemplateRelationships**](InquiryTemplateRelationships.md) |  | [optional] |

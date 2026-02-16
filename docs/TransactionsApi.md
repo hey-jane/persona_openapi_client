@@ -22,7 +22,7 @@ All URIs are relative to *https://api.withpersona.com/api/v1*
 
 Create a Transaction
 
-Creates a new <<glossary:Transaction>> for a specific <<glossary:transaction type>> in your organization.
+Creates a new Transaction for a specific transaction type in your organization.
 
 ### Examples
 
@@ -37,11 +37,11 @@ end
 
 api_instance = PersonaAPIClient::TransactionsApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   create_a_transaction_request: PersonaAPIClient::CreateATransactionRequest.new # CreateATransactionRequest | 
 }
 
@@ -76,11 +76,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **create_a_transaction_request** | [**CreateATransactionRequest**](CreateATransactionRequest.md) |  | [optional] |
 
 ### Return type
@@ -103,7 +103,7 @@ end
 
 Create a Transaction label
 
-Create a new label for an existing <<glossary:Transaction>>.
+Create a new label for an existing Transaction.
 
 ### Examples
 
@@ -119,11 +119,11 @@ end
 api_instance = PersonaAPIClient::TransactionsApi.new
 transaction_id = 'transaction_id_example' # String | ID of the transaction to create a label for.
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   create_a_transaction_label_request: PersonaAPIClient::CreateATransactionLabelRequest.new # CreateATransactionLabelRequest | 
 }
 
@@ -159,11 +159,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **transaction_id** | **String** | ID of the transaction to create a label for. |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **create_a_transaction_label_request** | [**CreateATransactionLabelRequest**](CreateATransactionLabelRequest.md) |  | [optional] |
 
 ### Return type
@@ -186,7 +186,7 @@ end
 
 List all Transactions
 
-Returns a list of your organization's transactions. Note that this endpoint aggregates transactions across all <<glossary:transaction type>>(s). See [Pagination](https://docs.withpersona.com/reference/pagination) for more details about handling the response.
+Returns a list of your organization's transactions. Note that this endpoint aggregates transactions across all transaction type(s). See [Pagination](https://docs.withpersona.com/pagination) for more details about handling the response. Results are returned in reverse chronological order, with the most recently created objects first.
 
 ### Examples
 
@@ -201,12 +201,12 @@ end
 
 api_instance = PersonaAPIClient::TransactionsApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
   page: PersonaAPIClient::ListAllAccountsPageParameter.new, # ListAllAccountsPageParameter | 
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
-  filter: { key: { key: 3.56}} # ListAllTransactionsFilterParameter | 
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+  filter: PersonaAPIClient::ListAllTransactionsFilterParameter.new # ListAllTransactionsFilterParameter | 
 }
 
 begin
@@ -240,12 +240,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
 | **page** | [**ListAllAccountsPageParameter**](.md) |  | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
-| **filter** | [**ListAllTransactionsFilterParameter**](Object.md) |  | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+| **filter** | [**ListAllTransactionsFilterParameter**](.md) |  | [optional] |
 
 ### Return type
 
@@ -263,11 +263,11 @@ end
 
 ## redact_a_transaction
 
-> <CreateATransaction200Response> redact_a_transaction(transaction_id, opts)
+> <CreateATransaction201Response> redact_a_transaction(transaction_id, opts)
 
 Redact a Transaction
 
-Permanently deletes personally identifiable information (PII) for a <<glossary:Transaction>>. The response indicates a successful redaction of the Transaction. Redaction of the Transaction's associated child objects are done asynchronously and may take some time before all associated child objects are fully redacted. **This action cannot be undone**.
+Permanently deletes personally identifiable information (PII) for a Transaction. The response indicates a successful redaction of the Transaction. Redaction of the Transaction's associated child objects is done asynchronously and may take some time before all associated child objects are fully redacted. **This action cannot be undone**.
 
 ### Examples
 
@@ -283,11 +283,11 @@ end
 api_instance = PersonaAPIClient::TransactionsApi.new
 transaction_id = 'transaction_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -303,7 +303,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateATransaction200Response>, Integer, Hash)> redact_a_transaction_with_http_info(transaction_id, opts)
+> <Array(<CreateATransaction201Response>, Integer, Hash)> redact_a_transaction_with_http_info(transaction_id, opts)
 
 ```ruby
 begin
@@ -311,7 +311,7 @@ begin
   data, status_code, headers = api_instance.redact_a_transaction_with_http_info(transaction_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateATransaction200Response>
+  p data # => <CreateATransaction201Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling TransactionsApi->redact_a_transaction_with_http_info: #{e}"
 end
@@ -322,15 +322,15 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **transaction_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
-[**CreateATransaction200Response**](CreateATransaction200Response.md)
+[**CreateATransaction201Response**](CreateATransaction201Response.md)
 
 ### Authorization
 
@@ -344,11 +344,11 @@ end
 
 ## redact_transaction_biometrics
 
-> <CreateATransaction200Response> redact_transaction_biometrics(transaction_id, opts)
+> <CreateATransaction201Response> redact_transaction_biometrics(transaction_id, opts)
 
 Redact Transaction biometrics
 
-Permanently deletes biometric data for a <<glossary:Transaction>> AND all its associated objects. **This action cannot be undone**.
+Permanently deletes biometric data for a Transaction AND all its associated objects. **This action cannot be undone**.
 
 ### Examples
 
@@ -364,11 +364,11 @@ end
 api_instance = PersonaAPIClient::TransactionsApi.new
 transaction_id = 'transaction_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -384,7 +384,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateATransaction200Response>, Integer, Hash)> redact_transaction_biometrics_with_http_info(transaction_id, opts)
+> <Array(<CreateATransaction201Response>, Integer, Hash)> redact_transaction_biometrics_with_http_info(transaction_id, opts)
 
 ```ruby
 begin
@@ -392,7 +392,7 @@ begin
   data, status_code, headers = api_instance.redact_transaction_biometrics_with_http_info(transaction_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateATransaction200Response>
+  p data # => <CreateATransaction201Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling TransactionsApi->redact_transaction_biometrics_with_http_info: #{e}"
 end
@@ -403,15 +403,15 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **transaction_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
-[**CreateATransaction200Response**](CreateATransaction200Response.md)
+[**CreateATransaction201Response**](CreateATransaction201Response.md)
 
 ### Authorization
 
@@ -429,7 +429,7 @@ end
 
 Retrieve a Transaction
 
-Retrieves the details of an existing <<glossary:Transaction>>.
+Retrieves the details of an existing Transaction.
 
 ### Examples
 
@@ -445,11 +445,11 @@ end
 api_instance = PersonaAPIClient::TransactionsApi.new
 transaction_id = 'transaction_id_example' # String | ID of the transaction to retrieve.
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -484,11 +484,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **transaction_id** | **String** | ID of the transaction to retrieve. |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
@@ -506,7 +506,7 @@ end
 
 ## transactions_add_tag
 
-> <CreateATransaction200Response> transactions_add_tag(transaction_id, opts)
+> <CreateATransaction201Response> transactions_add_tag(transaction_id, opts)
 
 Add tag to Transaction
 
@@ -526,11 +526,11 @@ end
 api_instance = PersonaAPIClient::TransactionsApi.new
 transaction_id = 'transaction_id_example' # String | ID of the transaction to add tag on.
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   transactions_add_tag_request: PersonaAPIClient::TransactionsAddTagRequest.new # TransactionsAddTagRequest | 
 }
 
@@ -547,7 +547,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateATransaction200Response>, Integer, Hash)> transactions_add_tag_with_http_info(transaction_id, opts)
+> <Array(<CreateATransaction201Response>, Integer, Hash)> transactions_add_tag_with_http_info(transaction_id, opts)
 
 ```ruby
 begin
@@ -555,7 +555,7 @@ begin
   data, status_code, headers = api_instance.transactions_add_tag_with_http_info(transaction_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateATransaction200Response>
+  p data # => <CreateATransaction201Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling TransactionsApi->transactions_add_tag_with_http_info: #{e}"
 end
@@ -566,16 +566,16 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **transaction_id** | **String** | ID of the transaction to add tag on. |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **transactions_add_tag_request** | [**TransactionsAddTagRequest**](TransactionsAddTagRequest.md) |  | [optional] |
 
 ### Return type
 
-[**CreateATransaction200Response**](CreateATransaction200Response.md)
+[**CreateATransaction201Response**](CreateATransaction201Response.md)
 
 ### Authorization
 
@@ -589,7 +589,7 @@ end
 
 ## transactions_remove_tag
 
-> <CreateATransaction200Response> transactions_remove_tag(transaction_id, opts)
+> <CreateATransaction201Response> transactions_remove_tag(transaction_id, opts)
 
 Remove tag from a Transaction
 
@@ -609,12 +609,12 @@ end
 api_instance = PersonaAPIClient::TransactionsApi.new
 transaction_id = 'transaction_id_example' # String | ID of the transaction to remove tag from.
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
-  transactions_add_tag_request: PersonaAPIClient::TransactionsAddTagRequest.new # TransactionsAddTagRequest | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+  transactions_remove_tag_request: PersonaAPIClient::TransactionsRemoveTagRequest.new # TransactionsRemoveTagRequest | 
 }
 
 begin
@@ -630,7 +630,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateATransaction200Response>, Integer, Hash)> transactions_remove_tag_with_http_info(transaction_id, opts)
+> <Array(<CreateATransaction201Response>, Integer, Hash)> transactions_remove_tag_with_http_info(transaction_id, opts)
 
 ```ruby
 begin
@@ -638,7 +638,7 @@ begin
   data, status_code, headers = api_instance.transactions_remove_tag_with_http_info(transaction_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateATransaction200Response>
+  p data # => <CreateATransaction201Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling TransactionsApi->transactions_remove_tag_with_http_info: #{e}"
 end
@@ -649,16 +649,16 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **transaction_id** | **String** | ID of the transaction to remove tag from. |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
-| **transactions_add_tag_request** | [**TransactionsAddTagRequest**](TransactionsAddTagRequest.md) |  | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+| **transactions_remove_tag_request** | [**TransactionsRemoveTagRequest**](TransactionsRemoveTagRequest.md) |  | [optional] |
 
 ### Return type
 
-[**CreateATransaction200Response**](CreateATransaction200Response.md)
+[**CreateATransaction201Response**](CreateATransaction201Response.md)
 
 ### Authorization
 
@@ -672,7 +672,7 @@ end
 
 ## transactions_set_tags
 
-> <CreateATransaction200Response> transactions_set_tags(transaction_id, opts)
+> <CreateATransaction201Response> transactions_set_tags(transaction_id, opts)
 
 Sets tags on a Transaction
 
@@ -692,11 +692,11 @@ end
 api_instance = PersonaAPIClient::TransactionsApi.new
 transaction_id = 'transaction_id_example' # String | ID of the transaction to set tags on.
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   transactions_set_tags_request: PersonaAPIClient::TransactionsSetTagsRequest.new # TransactionsSetTagsRequest | 
 }
 
@@ -713,7 +713,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateATransaction200Response>, Integer, Hash)> transactions_set_tags_with_http_info(transaction_id, opts)
+> <Array(<CreateATransaction201Response>, Integer, Hash)> transactions_set_tags_with_http_info(transaction_id, opts)
 
 ```ruby
 begin
@@ -721,7 +721,7 @@ begin
   data, status_code, headers = api_instance.transactions_set_tags_with_http_info(transaction_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateATransaction200Response>
+  p data # => <CreateATransaction201Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling TransactionsApi->transactions_set_tags_with_http_info: #{e}"
 end
@@ -732,16 +732,16 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **transaction_id** | **String** | ID of the transaction to set tags on. |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **transactions_set_tags_request** | [**TransactionsSetTagsRequest**](TransactionsSetTagsRequest.md) |  | [optional] |
 
 ### Return type
 
-[**CreateATransaction200Response**](CreateATransaction200Response.md)
+[**CreateATransaction201Response**](CreateATransaction201Response.md)
 
 ### Authorization
 
@@ -759,7 +759,7 @@ end
 
 Update a Transaction
 
-Updates a <<glossary:Transaction>> that has been previously created.
+Updates a Transaction that has been previously created.
 
 ### Examples
 
@@ -775,11 +775,11 @@ end
 api_instance = PersonaAPIClient::TransactionsApi.new
 transaction_id = 'transaction_id_example' # String | ID of the transaction to update.
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   update_a_transaction_request: PersonaAPIClient::UpdateATransactionRequest.new # UpdateATransactionRequest | 
 }
 
@@ -815,11 +815,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **transaction_id** | **String** | ID of the transaction to update. |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **update_a_transaction_request** | [**UpdateATransactionRequest**](UpdateATransactionRequest.md) |  | [optional] |
 
 ### Return type

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | verification/document | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | The token of the verification | [optional] |
 | **attributes** | [**VerificationDocumentAttributes**](VerificationDocumentAttributes.md) |  | [optional] |
 | **relationships** | [**VerificationDocumentRelationships**](VerificationDocumentRelationships.md) |  | [optional] |

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/business-adverse-media | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportBusinessAdverseMediaRequestAttributes**](ReportBusinessAdverseMediaRequestAttributes.md) |  |  |
 
 ## Example

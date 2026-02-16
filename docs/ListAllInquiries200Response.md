@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Array&lt;Inquiry&gt;**](Inquiry.md) | An array of Inquiries | [optional] |
-| **links** | [**ListAllAccounts200ResponseLinks**](ListAllAccounts200ResponseLinks.md) |  | [optional] |
+| **data** | [**Array&lt;Inquiry&gt;**](Inquiry.md) | An array of Inquiries |  |
+| **links** | [**ListAllAccounts200ResponseLinks**](ListAllAccounts200ResponseLinks.md) |  |  |
 
 ## Example
 

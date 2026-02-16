@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**VerificationDatabasePhoneCarrier**](VerificationDatabasePhoneCarrier.md) |  | [optional] |
+| **data** | [**VerificationDatabasePhoneCarrier**](VerificationDatabasePhoneCarrier.md) |  |  |
 
 ## Example
 

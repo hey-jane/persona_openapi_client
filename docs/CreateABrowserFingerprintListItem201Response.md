@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListItemBrowserFingerprint**](ListItemBrowserFingerprint.md) |  | [optional] |
+| **data** | [**ListItemBrowserFingerprint**](ListItemBrowserFingerprint.md) |  |  |
 
 ## Example
 

@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
-| **type** | **String** | account | [optional] |
+| **type** | **String** |  | [optional] |
 
 ## Example
 

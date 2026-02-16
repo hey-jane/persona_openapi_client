@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | verification/aamva | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | The token of the verification | [optional] |
 | **attributes** | [**VerificationAamvaAttributes**](VerificationAamvaAttributes.md) |  | [optional] |
 | **relationships** | [**VerificationSharedRelationships**](VerificationSharedRelationships.md) |  | [optional] |

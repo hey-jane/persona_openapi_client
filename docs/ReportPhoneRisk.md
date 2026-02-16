@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/phone-number | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | The ID of the report | [optional] |
 | **attributes** | [**ReportPhoneRiskAttributes**](ReportPhoneRiskAttributes.md) |  | [optional] |
 | **relationships** | [**ReportSharedRelationships**](ReportSharedRelationships.md) |  | [optional] |

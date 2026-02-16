@@ -23,7 +23,7 @@
 | **updater_id** | **String** |  | [optional] |
 | **updater_type** | **String** | Possible values: - case-assignment-policy - user - workflow-run  Do not assume this is a static enumeration; Persona may add new values in the future without a versioned update. | [optional] |
 | **tags** | **Array&lt;Object&gt;** |  | [optional] |
-| **fields** | **Object** |  | [optional] |
+| **fields** | **Hash&lt;String, Object&gt;** | JSON key-value pairs of field name to field value. Exact schema depends on the configuration of the Case template for this Case. Keys in &#x60;fields&#x60; are **not** key inflected. | [optional] |
 | **attachments** | [**Array&lt;CaseAttributesAttachmentsInner&gt;**](CaseAttributesAttachmentsInner.md) |  | [optional] |
 
 ## Example

@@ -7,8 +7,8 @@
 | **method** | **String** |  | [optional] |
 | **path** | **String** |  | [optional] |
 | **headers** | [**ApiLogAttributesRequestHeaders**](ApiLogAttributesRequestHeaders.md) |  | [optional] |
-| **get_params** | **Object** | The GET params of the request. Schema depends on the API called. | [optional] |
-| **post_params** | **Object** | The POST params of the request. Schema depends on the API called. | [optional] |
+| **get_params** | **Hash&lt;String, Object&gt;** | The GET params of the request. Schema depends on the API called. | [optional] |
+| **post_params** | **Hash&lt;String, Object&gt;** | The POST params of the request. Schema depends on the API called. | [optional] |
 | **ip_address** | **String** |  | [optional] |
 
 ## Example

@@ -18,8 +18,7 @@ PersonaAPIClient::ListItemIpAddressRelationshipsCreatorData.openapi_one_of
 #   :'ListItemBrowserFingerprintRelationshipsCreatorDataOneOf1',
 #   :'ListItemBrowserFingerprintRelationshipsCreatorDataOneOf2',
 #   :'ListItemBrowserFingerprintRelationshipsCreatorDataOneOf3',
-#   :'ListItemIpAddressRelationshipsCreatorDataOneOf',
-#   :'Object'
+#   :'ListItemIpAddressRelationshipsCreatorDataOneOf'
 # ]
 ```
 
@@ -52,6 +51,5 @@ PersonaAPIClient::ListItemIpAddressRelationshipsCreatorData.build(data_that_does
 - `ListItemBrowserFingerprintRelationshipsCreatorDataOneOf2`
 - `ListItemBrowserFingerprintRelationshipsCreatorDataOneOf3`
 - `ListItemIpAddressRelationshipsCreatorDataOneOf`
-- `Object`
 - `nil` (if no type matches)
 

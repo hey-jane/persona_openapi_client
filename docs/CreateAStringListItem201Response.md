@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListItemString**](ListItemString.md) |  | [optional] |
+| **data** | [**ListItemString**](ListItemString.md) |  |  |
 
 ## Example
 

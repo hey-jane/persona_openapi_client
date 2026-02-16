@@ -6,8 +6,8 @@
 | ---- | ---- | ----------- | ----- |
 | **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
-| **attributes** | **Object** |  | [optional] |
-| **relationships** | **Object** |  | [optional] |
+| **attributes** | **Hash&lt;String, Object&gt;** |  | [optional] |
+| **relationships** | **Hash&lt;String, Object&gt;** |  | [optional] |
 
 ## Example
 

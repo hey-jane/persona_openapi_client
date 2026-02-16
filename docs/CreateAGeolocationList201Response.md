@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListsGeolocations**](ListsGeolocations.md) |  | [optional] |
+| **data** | [**ListsGeolocations**](ListsGeolocations.md) |  |  |
 
 ## Example
 

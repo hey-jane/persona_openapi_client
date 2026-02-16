@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
-| **type** | **String** | document/government-id | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**DocumentGovernmentIdAttributes**](DocumentGovernmentIdAttributes.md) |  | [optional] |
 | **relationships** | [**DocumentSharedRelationships**](DocumentSharedRelationships.md) |  | [optional] |
 

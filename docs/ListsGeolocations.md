@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | list/geolocation | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 | **attributes** | [**ListsSharedAttributes**](ListsSharedAttributes.md) |  | [optional] |
 | **relationships** | [**ListsGeolocationsRelationships**](ListsGeolocationsRelationships.md) |  | [optional] |

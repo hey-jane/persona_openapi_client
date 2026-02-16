@@ -4,10 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **back_photo** | [**CreateAGovernmentIdDocumentRequestDataAttributesBackPhoto**](CreateAGovernmentIdDocumentRequestDataAttributesBackPhoto.md) |  | [optional] |
+| **back_photo** | [**UpdateAGovernmentIdDocumentRequestDataAttributesBackPhoto**](UpdateAGovernmentIdDocumentRequestDataAttributesBackPhoto.md) |  | [optional] |
 | **front_photo** | [**CreateAGovernmentIdDocumentRequestDataAttributesFrontPhoto**](CreateAGovernmentIdDocumentRequestDataAttributesFrontPhoto.md) |  | [optional] |
 | **selected_country_code** | **String** |  | [optional] |
-| **selected_id_class** | **Array&lt;String&gt;** |  | [optional] |
+| **selected_id_class** | **AnyOfstring&lt;String&gt;** |  | [optional] |
 
 ## Example
 

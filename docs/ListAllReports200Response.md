@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Array&lt;Report&gt;**](Report.md) |  | [optional] |
-| **links** | [**ListAllDevices200ResponseLinks**](ListAllDevices200ResponseLinks.md) |  | [optional] |
+| **data** | [**Array&lt;Report&gt;**](Report.md) |  |  |
+| **links** | [**ListAllReports200ResponseLinks**](ListAllReports200ResponseLinks.md) |  |  |
 
 ## Example
 

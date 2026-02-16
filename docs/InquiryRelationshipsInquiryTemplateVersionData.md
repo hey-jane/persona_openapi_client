@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** |  | [optional] |
-| **type** | **String** | inquiry-template-version | [optional] |
+| **type** | **String** |  | [optional] |
 
 ## Example
 

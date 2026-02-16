@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | verification/database-ecbsv | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | The token of the verification | [optional] |
 | **attributes** | [**VerificationDatabaseEcbsvAttributes**](VerificationDatabaseEcbsvAttributes.md) |  | [optional] |
 | **relationships** | [**VerificationSharedRelationships**](VerificationSharedRelationships.md) |  | [optional] |

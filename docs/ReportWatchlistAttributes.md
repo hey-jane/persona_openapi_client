@@ -20,7 +20,6 @@
 | **birthdate** | **String** | The input DOB in YYYY-MM-DD format | [optional] |
 | **country_code** | **String** | The input search country in alpha2 format | [optional] |
 | **matched_lists** | [**Array&lt;ReportWatchlistAttributesAllOfMatchedListsInner&gt;**](ReportWatchlistAttributesAllOfMatchedListsInner.md) | Lists that matched from the search input | [optional] |
-| **run_history** | [**Array&lt;ReportRunHistoryInner&gt;**](ReportRunHistoryInner.md) | A history of the report runs | [optional] |
 | **ignore_list** | [**Array&lt;ReportWatchlistAttributesAllOfIgnoreListInner&gt;**](ReportWatchlistAttributesAllOfIgnoreListInner.md) |  | [optional] |
 
 ## Example
@@ -45,7 +44,6 @@ instance = PersonaAPIClient::ReportWatchlistAttributes.new(
   birthdate: 1991-10-07,
   country_code: US,
   matched_lists: null,
-  run_history: null,
   ignore_list: null
 )
 ```

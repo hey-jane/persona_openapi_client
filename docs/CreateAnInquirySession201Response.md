@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**InquirySession**](InquirySession.md) |  | [optional] |
-| **included** | [**Array&lt;InquirySessionsIncludedObjectsInner&gt;**](InquirySessionsIncludedObjectsInner.md) |  | [optional] |
+| **data** | [**InquirySession**](InquirySession.md) |  |  |
+| **included** | [**Array&lt;InquirySessionsIncludedObjectsInner&gt;**](InquirySessionsIncludedObjectsInner.md) | Objects that _may_ be returned if specified via the &#x60;include&#x60; query parameter in the request. | [optional] |
 
 ## Example
 

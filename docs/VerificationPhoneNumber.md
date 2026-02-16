@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | verification/phone-number | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | The token of the verification | [optional] |
 | **attributes** | [**VerificationPhoneNumberAttributes**](VerificationPhoneNumberAttributes.md) |  | [optional] |
 | **relationships** | [**VerificationSharedRelationships**](VerificationSharedRelationships.md) |  | [optional] |

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **verification_template_id** | **String** | The token of the Verification Template. See [supported Verification types](https://docs.withpersona.com/docs/integration-testing#supported-verification-types). |  |
+| **verification_template_id** | **String** | The token of the Verification Template. See [supported Verification types](https://docs.withpersona.com/integration-testing#supported-verification-types). |  |
 
 ## Example
 

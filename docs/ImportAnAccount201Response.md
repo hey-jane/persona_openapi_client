@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ImporterAccount**](ImporterAccount.md) |  | [optional] |
+| **data** | [**ImporterAccount**](ImporterAccount.md) |  |  |
 
 ## Example
 

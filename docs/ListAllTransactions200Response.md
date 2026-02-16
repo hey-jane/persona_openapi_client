@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Array&lt;Transaction&gt;**](Transaction.md) |  | [optional] |
-| **links** | [**ListAllDevices200ResponseLinks**](ListAllDevices200ResponseLinks.md) |  | [optional] |
+| **data** | [**Array&lt;Transaction&gt;**](Transaction.md) |  |  |
+| **links** | [**ListAllDevices200ResponseLinks**](ListAllDevices200ResponseLinks.md) |  |  |
 
 ## Example
 

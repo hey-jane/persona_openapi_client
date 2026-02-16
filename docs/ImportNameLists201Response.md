@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ImporterListItemName**](ImporterListItemName.md) |  | [optional] |
+| **data** | [**ImporterListItemName**](ImporterListItemName.md) |  |  |
 
 ## Example
 

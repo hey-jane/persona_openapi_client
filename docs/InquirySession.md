@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | inquiry-session | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 | **attributes** | [**InquirySessionAttributes**](InquirySessionAttributes.md) |  | [optional] |
 | **relationships** | [**InquirySessionRelationships**](InquirySessionRelationships.md) |  | [optional] |

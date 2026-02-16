@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**VerificationPhoneNumber**](VerificationPhoneNumber.md) |  | [optional] |
+| **data** | [**VerificationPhoneNumber**](VerificationPhoneNumber.md) |  |  |
 
 ## Example
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **meta** | [**AccountsRemoveTagRequestMeta**](AccountsRemoveTagRequestMeta.md) |  | [optional] |
+| **meta** | [**AccountsRemoveTagRequestMeta**](AccountsRemoveTagRequestMeta.md) |  |  |
 
 ## Example
 

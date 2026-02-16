@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **metadata** | **Object** |  | [optional] |
+| **metadata** | **Hash&lt;String, Object&gt;** |  | [optional] |
 | **name** | **String** |  | [optional] |
 | **reasons** | **Array&lt;String&gt;** |  | [optional] |
 | **status** | **String** |  | [optional] |

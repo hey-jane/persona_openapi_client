@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | case | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 | **attributes** | [**CaseAttributes**](CaseAttributes.md) |  | [optional] |
 | **relationships** | [**CaseRelationships**](CaseRelationships.md) |  | [optional] |

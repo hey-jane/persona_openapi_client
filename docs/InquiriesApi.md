@@ -14,6 +14,7 @@ All URIs are relative to *https://api.withpersona.com/api/v1*
 | [**inquiries_remove_tag**](InquiriesApi.md#inquiries_remove_tag) | **POST** /inquiries/{inquiry-id}/remove-tag | Remove tag from an Inquiry |
 | [**inquiries_set_all_tags**](InquiriesApi.md#inquiries_set_all_tags) | **POST** /inquiries/{inquiry-id}/set-tags | Set tags on an Inquiry |
 | [**list_all_inquiries**](InquiriesApi.md#list_all_inquiries) | **GET** /inquiries | List all Inquiries |
+| [**mark_an_inquiry_for_review**](InquiriesApi.md#mark_an_inquiry_for_review) | **POST** /inquiries/{inquiry-id}/mark-for-review | Mark an Inquiry for manual review |
 | [**print_an_inquiry_pdf**](InquiriesApi.md#print_an_inquiry_pdf) | **GET** /inquiries/{inquiry-id}/print | Print Inquiry PDF |
 | [**redact_an_inquiry**](InquiriesApi.md#redact_an_inquiry) | **DELETE** /inquiries/{inquiry-id} | Redact an Inquiry |
 | [**resume_an_inquiry**](InquiriesApi.md#resume_an_inquiry) | **POST** /inquiries/{inquiry-id}/resume | Resume an Inquiry |
@@ -23,11 +24,11 @@ All URIs are relative to *https://api.withpersona.com/api/v1*
 
 ## approve_an_inquiry
 
-> <CreateAnInquiry201Response> approve_an_inquiry(inquiry_id, opts)
+> <RedactAnInquiry200Response> approve_an_inquiry(inquiry_id, opts)
 
 Approve an Inquiry
 
-Approves an <<glossary:Inquiry>>.  Note that this action will trigger any associated workflows and webhooks.
+Approves an Inquiry.  Note that this action will trigger any associated workflows and webhooks.  Approving an inquiry will prevent further progress on the inquiry.
 
 ### Examples
 
@@ -43,11 +44,11 @@ end
 api_instance = PersonaAPIClient::InquiriesApi.new
 inquiry_id = 'inquiry_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   approve_an_inquiry_request: PersonaAPIClient::ApproveAnInquiryRequest.new # ApproveAnInquiryRequest | 
 }
 
@@ -64,7 +65,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAnInquiry201Response>, Integer, Hash)> approve_an_inquiry_with_http_info(inquiry_id, opts)
+> <Array(<RedactAnInquiry200Response>, Integer, Hash)> approve_an_inquiry_with_http_info(inquiry_id, opts)
 
 ```ruby
 begin
@@ -72,7 +73,7 @@ begin
   data, status_code, headers = api_instance.approve_an_inquiry_with_http_info(inquiry_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateAnInquiry201Response>
+  p data # => <RedactAnInquiry200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling InquiriesApi->approve_an_inquiry_with_http_info: #{e}"
 end
@@ -83,16 +84,16 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **inquiry_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **approve_an_inquiry_request** | [**ApproveAnInquiryRequest**](ApproveAnInquiryRequest.md) |  | [optional] |
 
 ### Return type
 
-[**CreateAnInquiry201Response**](CreateAnInquiry201Response.md)
+[**RedactAnInquiry200Response**](RedactAnInquiry200Response.md)
 
 ### Authorization
 
@@ -110,7 +111,7 @@ end
 
 Create an Inquiry
 
-Creates a new inquiry with optional pre-filled attributes.  See [Sessions](https://docs.withpersona.com/docs/inquiry-sessions) for how to continue the inquiry in [Embedded Flow](https://docs.withpersona.com/docs/embedded-flow) or [Hosted Flow](https://docs.withpersona.com/docs/hosted-flow).
+Creates a new inquiry with optional pre-filled attributes.  See [Sessions](https://docs.withpersona.com/inquiry-sessions) for how to continue the inquiry in [Embedded Flow](https://docs.withpersona.com/embedded-flow) or [Hosted Flow](https://docs.withpersona.com/hosted-flow).
 
 ### Examples
 
@@ -125,11 +126,11 @@ end
 
 api_instance = PersonaAPIClient::InquiriesApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   create_an_inquiry_request: PersonaAPIClient::CreateAnInquiryRequest.new({data: PersonaAPIClient::CreateAnInquiryRequestData.new({attributes: PersonaAPIClient::CreateAnInquiryRequestDataAttributes.new})}) # CreateAnInquiryRequest | 
 }
 
@@ -164,11 +165,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **create_an_inquiry_request** | [**CreateAnInquiryRequest**](CreateAnInquiryRequest.md) |  | [optional] |
 
 ### Return type
@@ -187,11 +188,11 @@ end
 
 ## decline_an_inquiry
 
-> <CreateAnInquiry201Response> decline_an_inquiry(inquiry_id, opts)
+> <RedactAnInquiry200Response> decline_an_inquiry(inquiry_id, opts)
 
 Decline an Inquiry
 
-Declines an <<glossary:Inquiry>>. Note that this action will trigger any associated workflows and webhooks.
+Declines an Inquiry.  Note that this action will trigger any associated workflows and webhooks.  Declining an inquiry will prevent further progress on the inquiry.
 
 ### Examples
 
@@ -207,11 +208,11 @@ end
 api_instance = PersonaAPIClient::InquiriesApi.new
 inquiry_id = 'inquiry_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   approve_an_inquiry_request: PersonaAPIClient::ApproveAnInquiryRequest.new # ApproveAnInquiryRequest | 
 }
 
@@ -228,7 +229,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAnInquiry201Response>, Integer, Hash)> decline_an_inquiry_with_http_info(inquiry_id, opts)
+> <Array(<RedactAnInquiry200Response>, Integer, Hash)> decline_an_inquiry_with_http_info(inquiry_id, opts)
 
 ```ruby
 begin
@@ -236,7 +237,7 @@ begin
   data, status_code, headers = api_instance.decline_an_inquiry_with_http_info(inquiry_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateAnInquiry201Response>
+  p data # => <RedactAnInquiry200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling InquiriesApi->decline_an_inquiry_with_http_info: #{e}"
 end
@@ -247,16 +248,16 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **inquiry_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **approve_an_inquiry_request** | [**ApproveAnInquiryRequest**](ApproveAnInquiryRequest.md) |  | [optional] |
 
 ### Return type
 
-[**CreateAnInquiry201Response**](CreateAnInquiry201Response.md)
+[**RedactAnInquiry200Response**](RedactAnInquiry200Response.md)
 
 ### Authorization
 
@@ -270,7 +271,7 @@ end
 
 ## expire_an_inquiry
 
-> <CreateAnInquiry201Response> expire_an_inquiry(inquiry_id, opts)
+> <RedactAnInquiry200Response> expire_an_inquiry(inquiry_id, opts)
 
 Expire an Inquiry
 
@@ -290,11 +291,11 @@ end
 api_instance = PersonaAPIClient::InquiriesApi.new
 inquiry_id = 'inquiry_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -310,7 +311,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAnInquiry201Response>, Integer, Hash)> expire_an_inquiry_with_http_info(inquiry_id, opts)
+> <Array(<RedactAnInquiry200Response>, Integer, Hash)> expire_an_inquiry_with_http_info(inquiry_id, opts)
 
 ```ruby
 begin
@@ -318,7 +319,7 @@ begin
   data, status_code, headers = api_instance.expire_an_inquiry_with_http_info(inquiry_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateAnInquiry201Response>
+  p data # => <RedactAnInquiry200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling InquiriesApi->expire_an_inquiry_with_http_info: #{e}"
 end
@@ -329,15 +330,15 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **inquiry_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
-[**CreateAnInquiry201Response**](CreateAnInquiry201Response.md)
+[**RedactAnInquiry200Response**](RedactAnInquiry200Response.md)
 
 ### Authorization
 
@@ -371,11 +372,11 @@ end
 api_instance = PersonaAPIClient::InquiriesApi.new
 inquiry_id = 'inquiry_id_example' # String | Inquiry ID (starts with \"inq_\")
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   generate_a_one_time_link_request: PersonaAPIClient::GenerateAOneTimeLinkRequest.new # GenerateAOneTimeLinkRequest | 
 }
 
@@ -411,11 +412,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **inquiry_id** | **String** | Inquiry ID (starts with \&quot;inq_\&quot;) |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **generate_a_one_time_link_request** | [**GenerateAOneTimeLinkRequest**](GenerateAOneTimeLinkRequest.md) |  | [optional] |
 
 ### Return type
@@ -434,7 +435,7 @@ end
 
 ## inquiries_add_tag
 
-> <CreateAnInquiry201Response> inquiries_add_tag(inquiry_id, opts)
+> <RedactAnInquiry200Response> inquiries_add_tag(inquiry_id, opts)
 
 Add tag to an Inquiry
 
@@ -454,11 +455,11 @@ end
 api_instance = PersonaAPIClient::InquiriesApi.new
 inquiry_id = 'inquiry_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   inquiries_add_tag_request: PersonaAPIClient::InquiriesAddTagRequest.new # InquiriesAddTagRequest | 
 }
 
@@ -475,7 +476,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAnInquiry201Response>, Integer, Hash)> inquiries_add_tag_with_http_info(inquiry_id, opts)
+> <Array(<RedactAnInquiry200Response>, Integer, Hash)> inquiries_add_tag_with_http_info(inquiry_id, opts)
 
 ```ruby
 begin
@@ -483,7 +484,7 @@ begin
   data, status_code, headers = api_instance.inquiries_add_tag_with_http_info(inquiry_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateAnInquiry201Response>
+  p data # => <RedactAnInquiry200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling InquiriesApi->inquiries_add_tag_with_http_info: #{e}"
 end
@@ -494,16 +495,16 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **inquiry_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **inquiries_add_tag_request** | [**InquiriesAddTagRequest**](InquiriesAddTagRequest.md) |  | [optional] |
 
 ### Return type
 
-[**CreateAnInquiry201Response**](CreateAnInquiry201Response.md)
+[**RedactAnInquiry200Response**](RedactAnInquiry200Response.md)
 
 ### Authorization
 
@@ -517,7 +518,7 @@ end
 
 ## inquiries_perform_simulate_actions
 
-> <CreateAnInquiry201Response> inquiries_perform_simulate_actions(inquiry_id, opts)
+> <RedactAnInquiry200Response> inquiries_perform_simulate_actions(inquiry_id, opts)
 
 Perform Simulate Actions
 
@@ -537,11 +538,11 @@ end
 api_instance = PersonaAPIClient::InquiriesApi.new
 inquiry_id = 'inquiry_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   inquiries_perform_simulate_actions_request: PersonaAPIClient::InquiriesPerformSimulateActionsRequest.new({meta: PersonaAPIClient::InquiriesPerformSimulateActionsRequestMeta.new({simulate_actions: [{"type": "start_inquiry"}, {"type": "create_failed_verification", "data": {"verification-template-id": "vtmpl_CCLT7pvBZM8z5fumdb3QvW5cSrdr"}}, {"type": "create_passed_verification", "data": {"verification-template-id": "vtmpl_CCLT7pvBZM8z5fumdb3QvW5cSrdr"}}, {"type": "complete_inquiry"}, {"type": "approve_inquiry"}]})}) # InquiriesPerformSimulateActionsRequest | 
 }
 
@@ -558,7 +559,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAnInquiry201Response>, Integer, Hash)> inquiries_perform_simulate_actions_with_http_info(inquiry_id, opts)
+> <Array(<RedactAnInquiry200Response>, Integer, Hash)> inquiries_perform_simulate_actions_with_http_info(inquiry_id, opts)
 
 ```ruby
 begin
@@ -566,7 +567,7 @@ begin
   data, status_code, headers = api_instance.inquiries_perform_simulate_actions_with_http_info(inquiry_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateAnInquiry201Response>
+  p data # => <RedactAnInquiry200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling InquiriesApi->inquiries_perform_simulate_actions_with_http_info: #{e}"
 end
@@ -577,16 +578,16 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **inquiry_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **inquiries_perform_simulate_actions_request** | [**InquiriesPerformSimulateActionsRequest**](InquiriesPerformSimulateActionsRequest.md) |  | [optional] |
 
 ### Return type
 
-[**CreateAnInquiry201Response**](CreateAnInquiry201Response.md)
+[**RedactAnInquiry200Response**](RedactAnInquiry200Response.md)
 
 ### Authorization
 
@@ -600,7 +601,7 @@ end
 
 ## inquiries_remove_tag
 
-> <CreateAnInquiry201Response> inquiries_remove_tag(inquiry_id, opts)
+> <RedactAnInquiry200Response> inquiries_remove_tag(inquiry_id, opts)
 
 Remove tag from an Inquiry
 
@@ -620,11 +621,11 @@ end
 api_instance = PersonaAPIClient::InquiriesApi.new
 inquiry_id = 'inquiry_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   inquiries_add_tag_request: PersonaAPIClient::InquiriesAddTagRequest.new # InquiriesAddTagRequest | 
 }
 
@@ -641,7 +642,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAnInquiry201Response>, Integer, Hash)> inquiries_remove_tag_with_http_info(inquiry_id, opts)
+> <Array(<RedactAnInquiry200Response>, Integer, Hash)> inquiries_remove_tag_with_http_info(inquiry_id, opts)
 
 ```ruby
 begin
@@ -649,7 +650,7 @@ begin
   data, status_code, headers = api_instance.inquiries_remove_tag_with_http_info(inquiry_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateAnInquiry201Response>
+  p data # => <RedactAnInquiry200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling InquiriesApi->inquiries_remove_tag_with_http_info: #{e}"
 end
@@ -660,16 +661,16 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **inquiry_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **inquiries_add_tag_request** | [**InquiriesAddTagRequest**](InquiriesAddTagRequest.md) |  | [optional] |
 
 ### Return type
 
-[**CreateAnInquiry201Response**](CreateAnInquiry201Response.md)
+[**RedactAnInquiry200Response**](RedactAnInquiry200Response.md)
 
 ### Authorization
 
@@ -683,7 +684,7 @@ end
 
 ## inquiries_set_all_tags
 
-> <CreateAnInquiry201Response> inquiries_set_all_tags(inquiry_id, opts)
+> <RedactAnInquiry200Response> inquiries_set_all_tags(inquiry_id, opts)
 
 Set tags on an Inquiry
 
@@ -703,11 +704,11 @@ end
 api_instance = PersonaAPIClient::InquiriesApi.new
 inquiry_id = 'inquiry_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   inquiries_set_all_tags_request: PersonaAPIClient::InquiriesSetAllTagsRequest.new # InquiriesSetAllTagsRequest | 
 }
 
@@ -724,7 +725,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAnInquiry201Response>, Integer, Hash)> inquiries_set_all_tags_with_http_info(inquiry_id, opts)
+> <Array(<RedactAnInquiry200Response>, Integer, Hash)> inquiries_set_all_tags_with_http_info(inquiry_id, opts)
 
 ```ruby
 begin
@@ -732,7 +733,7 @@ begin
   data, status_code, headers = api_instance.inquiries_set_all_tags_with_http_info(inquiry_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateAnInquiry201Response>
+  p data # => <RedactAnInquiry200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling InquiriesApi->inquiries_set_all_tags_with_http_info: #{e}"
 end
@@ -743,16 +744,16 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **inquiry_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **inquiries_set_all_tags_request** | [**InquiriesSetAllTagsRequest**](InquiriesSetAllTagsRequest.md) |  | [optional] |
 
 ### Return type
 
-[**CreateAnInquiry201Response**](CreateAnInquiry201Response.md)
+[**RedactAnInquiry200Response**](RedactAnInquiry200Response.md)
 
 ### Authorization
 
@@ -770,7 +771,7 @@ end
 
 List all Inquiries
 
-Returns a list of your organization's inquiries.  Note that this endpoint aggregates inquiries across all <<glossary:inquiry template>>(s). See [Pagination](https://docs.withpersona.com/reference/pagination) for more details about handling the response.
+Returns a list of your organization's inquiries.  Note that this endpoint aggregates inquiries across all inquiry template(s). See [Pagination](https://docs.withpersona.com/pagination) for more details about handling the response. Results are returned in reverse chronological order, with the most recently created objects first.
 
 ### Examples
 
@@ -785,12 +786,12 @@ end
 
 api_instance = PersonaAPIClient::InquiriesApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
   page: PersonaAPIClient::ListAllAccountsPageParameter.new, # ListAllAccountsPageParameter | 
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
-  filter: { key: { key: 3.56}} # ListAllInquiriesFilterParameter | 
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+  filter: PersonaAPIClient::ListAllInquiriesFilterParameter.new # ListAllInquiriesFilterParameter | 
 }
 
 begin
@@ -824,16 +825,97 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
 | **page** | [**ListAllAccountsPageParameter**](.md) |  | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
-| **filter** | [**ListAllInquiriesFilterParameter**](Object.md) |  | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+| **filter** | [**ListAllInquiriesFilterParameter**](.md) |  | [optional] |
 
 ### Return type
 
 [**ListAllInquiries200Response**](ListAllInquiries200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## mark_an_inquiry_for_review
+
+> <RedactAnInquiry200Response> mark_an_inquiry_for_review(inquiry_id, opts)
+
+Mark an Inquiry for manual review
+
+Marks an Inquiry for manual review. Inquiries that are already approved or declined cannot be marked for review.  Note that this action will trigger any associated workflows and webhooks.  Marking an inquiry for review will prevent further progress on the inquiry.
+
+### Examples
+
+```ruby
+require 'time'
+require 'persona_api_client'
+# setup authorization
+PersonaAPIClient.configure do |config|
+  # Configure Bearer authorization: bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = PersonaAPIClient::InquiriesApi.new
+inquiry_id = 'inquiry_id_example' # String | 
+opts = {
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+}
+
+begin
+  # Mark an Inquiry for manual review
+  result = api_instance.mark_an_inquiry_for_review(inquiry_id, opts)
+  p result
+rescue PersonaAPIClient::ApiError => e
+  puts "Error when calling InquiriesApi->mark_an_inquiry_for_review: #{e}"
+end
+```
+
+#### Using the mark_an_inquiry_for_review_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<RedactAnInquiry200Response>, Integer, Hash)> mark_an_inquiry_for_review_with_http_info(inquiry_id, opts)
+
+```ruby
+begin
+  # Mark an Inquiry for manual review
+  data, status_code, headers = api_instance.mark_an_inquiry_for_review_with_http_info(inquiry_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <RedactAnInquiry200Response>
+rescue PersonaAPIClient::ApiError => e
+  puts "Error when calling InquiriesApi->mark_an_inquiry_for_review_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **inquiry_id** | **String** |  |  |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+
+### Return type
+
+[**RedactAnInquiry200Response**](RedactAnInquiry200Response.md)
 
 ### Authorization
 
@@ -867,9 +949,9 @@ end
 api_instance = PersonaAPIClient::InquiriesApi.new
 inquiry_id = 'inquiry_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05' # String | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08 # ApiVersion | 
 }
 
 begin
@@ -904,9 +986,9 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **inquiry_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
 
 ### Return type
 
@@ -924,7 +1006,7 @@ end
 
 ## redact_an_inquiry
 
-> <CreateAnInquiry201Response> redact_an_inquiry(inquiry_id, opts)
+> <RedactAnInquiry200Response> redact_an_inquiry(inquiry_id, opts)
 
 Redact an Inquiry
 
@@ -944,11 +1026,11 @@ end
 api_instance = PersonaAPIClient::InquiriesApi.new
 inquiry_id = 'inquiry_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -964,7 +1046,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAnInquiry201Response>, Integer, Hash)> redact_an_inquiry_with_http_info(inquiry_id, opts)
+> <Array(<RedactAnInquiry200Response>, Integer, Hash)> redact_an_inquiry_with_http_info(inquiry_id, opts)
 
 ```ruby
 begin
@@ -972,7 +1054,7 @@ begin
   data, status_code, headers = api_instance.redact_an_inquiry_with_http_info(inquiry_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateAnInquiry201Response>
+  p data # => <RedactAnInquiry200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling InquiriesApi->redact_an_inquiry_with_http_info: #{e}"
 end
@@ -983,15 +1065,15 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **inquiry_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
-[**CreateAnInquiry201Response**](CreateAnInquiry201Response.md)
+[**RedactAnInquiry200Response**](RedactAnInquiry200Response.md)
 
 ### Authorization
 
@@ -1009,7 +1091,7 @@ end
 
 Resume an Inquiry
 
-Creates a session token that is returned as `meta.session-token`. If the inquiry's status is `expired`, changes the status to `pending`. The `session-token` must be included when loading the inquiry flow if the inquiry's status is `pending`. This endpoint will error if the inquiry is redacted. This endpoint first tries to reuse any existing valid unused [sessions](https://docs.withpersona.com/docs/inquiry-sessions). If none exist, a new session is created. For more information, see [Resuming Inquiries](https://docs.withpersona.com/docs/inquiries-resuming-inquiries).
+Creates a session token that is returned as `meta.session-token`. If the inquiry's status is `expired`, changes the status to `pending`. The `session-token` must be included when loading the inquiry flow if the inquiry's status is `pending`. This endpoint will error if the inquiry is redacted. This endpoint first tries to reuse any existing valid unused [sessions](https://docs.withpersona.com/inquiry-sessions). If none exist, a new session is created. For more information, see [Resuming Inquiries](https://docs.withpersona.com/resuming-inquiries).
 
 ### Examples
 
@@ -1025,11 +1107,11 @@ end
 api_instance = PersonaAPIClient::InquiriesApi.new
 inquiry_id = 'inquiry_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -1064,11 +1146,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **inquiry_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
@@ -1086,11 +1168,11 @@ end
 
 ## retrieve_an_inquiry
 
-> <CreateAnInquiry201Response> retrieve_an_inquiry(inquiry_id, opts)
+> <RetrieveAnInquiry200Response> retrieve_an_inquiry(inquiry_id, opts)
 
 Retrieve an Inquiry
 
-Retrieves the details of an existing Inquiry.  In the [Embedded Flow](https://docs.withpersona.com/docs/embedded-flow), the `inquiry-id` is the first parameter of the onStart callback. In the [Hosted Flow](https://docs.withpersona.com/docs/hosted-flow), the `inquiry-id` is a query parameter in the onComplete callback.  Template information will be found in `data.relationships.inquiry-template` if the inquiry is a Dynamic Flow inquiry, and in `data.relationships.template` if the inquiry is a Legacy 2.0 inquiry. For more information, see [Dynamic Flow vs. Legacy Templates](https://docs.withpersona.com/docs/inquiry-templates#dynamic-flow-vs-legacy-templates).
+Retrieves the details of an existing Inquiry.  In the [Embedded Flow](https://docs.withpersona.com/embedded-flow), the `inquiry-id` is the first parameter of the onStart callback. In the [Hosted Flow](https://docs.withpersona.com/hosted-flow), the `inquiry-id` is a query parameter in the onComplete callback.  Template information will be found in `data.relationships.inquiry-template` if the inquiry is a Dynamic Flow inquiry, and in `data.relationships.template` if the inquiry is a Legacy 2.0 inquiry. For more information, see [Dynamic Flow vs. Legacy Templates](https://docs.withpersona.com/inquiry-templates#dynamic-flow-vs-legacy-templates).
 
 ### Examples
 
@@ -1106,11 +1188,11 @@ end
 api_instance = PersonaAPIClient::InquiriesApi.new
 inquiry_id = 'inquiry_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -1126,7 +1208,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAnInquiry201Response>, Integer, Hash)> retrieve_an_inquiry_with_http_info(inquiry_id, opts)
+> <Array(<RetrieveAnInquiry200Response>, Integer, Hash)> retrieve_an_inquiry_with_http_info(inquiry_id, opts)
 
 ```ruby
 begin
@@ -1134,7 +1216,7 @@ begin
   data, status_code, headers = api_instance.retrieve_an_inquiry_with_http_info(inquiry_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateAnInquiry201Response>
+  p data # => <RetrieveAnInquiry200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling InquiriesApi->retrieve_an_inquiry_with_http_info: #{e}"
 end
@@ -1145,15 +1227,15 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **inquiry_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
-[**CreateAnInquiry201Response**](CreateAnInquiry201Response.md)
+[**RetrieveAnInquiry200Response**](RetrieveAnInquiry200Response.md)
 
 ### Authorization
 
@@ -1167,7 +1249,7 @@ end
 
 ## update_an_inquiry
 
-> <CreateAnInquiry201Response> update_an_inquiry(inquiry_id, opts)
+> <RedactAnInquiry200Response> update_an_inquiry(inquiry_id, opts)
 
 Update an Inquiry
 
@@ -1187,11 +1269,11 @@ end
 api_instance = PersonaAPIClient::InquiriesApi.new
 inquiry_id = 'inquiry_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   update_an_inquiry_request: PersonaAPIClient::UpdateAnInquiryRequest.new # UpdateAnInquiryRequest | 
 }
 
@@ -1208,7 +1290,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAnInquiry201Response>, Integer, Hash)> update_an_inquiry_with_http_info(inquiry_id, opts)
+> <Array(<RedactAnInquiry200Response>, Integer, Hash)> update_an_inquiry_with_http_info(inquiry_id, opts)
 
 ```ruby
 begin
@@ -1216,7 +1298,7 @@ begin
   data, status_code, headers = api_instance.update_an_inquiry_with_http_info(inquiry_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateAnInquiry201Response>
+  p data # => <RedactAnInquiry200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling InquiriesApi->update_an_inquiry_with_http_info: #{e}"
 end
@@ -1227,16 +1309,16 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **inquiry_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **update_an_inquiry_request** | [**UpdateAnInquiryRequest**](UpdateAnInquiryRequest.md) |  | [optional] |
 
 ### Return type
 
-[**CreateAnInquiry201Response**](CreateAnInquiry201Response.md)
+[**RedactAnInquiry200Response**](RedactAnInquiry200Response.md)
 
 ### Authorization
 

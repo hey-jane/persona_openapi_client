@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**VerificationGovernmentIdNfc**](VerificationGovernmentIdNfc.md) |  | [optional] |
+| **data** | [**VerificationGovernmentIdNfc**](VerificationGovernmentIdNfc.md) |  |  |
 
 ## Example
 

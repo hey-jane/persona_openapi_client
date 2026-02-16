@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/politically-exposed-person | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportAdverseMediaRequestAttributes**](ReportAdverseMediaRequestAttributes.md) |  |  |
 
 ## Example

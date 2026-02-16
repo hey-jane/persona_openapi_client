@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | The type of simulate action. See [valid actions](https://docs.withpersona.com/docs/integration-testing#creating-verification-with-status). |  |
+| **type** | **String** | The type of simulate action. See [valid actions](https://docs.withpersona.com/integration-testing#creating-verification-with-status). |  |
 | **data** | [**CreateVerificationActionData**](CreateVerificationActionData.md) |  |  |
 
 ## Example

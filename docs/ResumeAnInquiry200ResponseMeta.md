@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **session_token** | **String** |  | [optional] |
+| **session_token** | **String** |  |  |
 
 ## Example
 

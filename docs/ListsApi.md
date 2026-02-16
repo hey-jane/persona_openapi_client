@@ -11,6 +11,7 @@ All URIs are relative to *https://api.withpersona.com/api/v1*
 | [**create_a_government_id_number_list**](ListsApi.md#create_a_government_id_number_list) | **POST** /list/government-id-numbers | Create a Government ID Number List |
 | [**create_a_name_list**](ListsApi.md#create_a_name_list) | **POST** /list/names | Create a Name List |
 | [**create_a_phone_number_list**](ListsApi.md#create_a_phone_number_list) | **POST** /list/phone-numbers | Create a Phone Number List |
+| [**create_a_strings_list**](ListsApi.md#create_a_strings_list) | **POST** /list/strings | Create a Strings List |
 | [**create_an_email_address_list**](ListsApi.md#create_an_email_address_list) | **POST** /list/email-addresses | Create an Email Address List |
 | [**create_an_ip_address_list**](ListsApi.md#create_an_ip_address_list) | **POST** /list/ip-addresses | Create an IP Address List |
 | [**list_all_lists**](ListsApi.md#list_all_lists) | **GET** /lists | List all Lists |
@@ -19,11 +20,11 @@ All URIs are relative to *https://api.withpersona.com/api/v1*
 
 ## archive_a_list
 
-> <RetrieveAList200Response> archive_a_list(list_id, opts)
+> <ArchiveAList200Response> archive_a_list(list_id, opts)
 
 Archive a List
 
-Archive an existing <<glossary:list>>. Archived lists are still retrievable, but will no longer match on inquiries.
+Archive an existing list. Archived lists are still retrievable, but will no longer match on inquiries.
 
 ### Examples
 
@@ -39,11 +40,11 @@ end
 api_instance = PersonaAPIClient::ListsApi.new
 list_id = 'list_id_example' # String | ID of the list to archive
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -59,7 +60,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<RetrieveAList200Response>, Integer, Hash)> archive_a_list_with_http_info(list_id, opts)
+> <Array(<ArchiveAList200Response>, Integer, Hash)> archive_a_list_with_http_info(list_id, opts)
 
 ```ruby
 begin
@@ -67,7 +68,7 @@ begin
   data, status_code, headers = api_instance.archive_a_list_with_http_info(list_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <RetrieveAList200Response>
+  p data # => <ArchiveAList200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling ListsApi->archive_a_list_with_http_info: #{e}"
 end
@@ -78,15 +79,15 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **list_id** | **String** | ID of the list to archive |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
-[**RetrieveAList200Response**](RetrieveAList200Response.md)
+[**ArchiveAList200Response**](ArchiveAList200Response.md)
 
 ### Authorization
 
@@ -104,7 +105,7 @@ end
 
 Create a Browser Fingerprint List
 
-Create a new <<glossary:list>> for your organization.
+Create a new list for your organization.
 
 ### Examples
 
@@ -119,11 +120,11 @@ end
 
 api_instance = PersonaAPIClient::ListsApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   create_a_browser_fingerprint_list_request: PersonaAPIClient::CreateABrowserFingerprintListRequest.new # CreateABrowserFingerprintListRequest | 
 }
 
@@ -158,11 +159,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **create_a_browser_fingerprint_list_request** | [**CreateABrowserFingerprintListRequest**](CreateABrowserFingerprintListRequest.md) |  | [optional] |
 
 ### Return type
@@ -185,7 +186,7 @@ end
 
 Create a Country List
 
-Create a new <<glossary:list>> for your organization.
+Create a new list for your organization.
 
 ### Examples
 
@@ -200,12 +201,12 @@ end
 
 api_instance = PersonaAPIClient::ListsApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
-  create_a_browser_fingerprint_list_request: PersonaAPIClient::CreateABrowserFingerprintListRequest.new # CreateABrowserFingerprintListRequest | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+  create_a_country_list_request: PersonaAPIClient::CreateACountryListRequest.new # CreateACountryListRequest | 
 }
 
 begin
@@ -239,12 +240,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
-| **create_a_browser_fingerprint_list_request** | [**CreateABrowserFingerprintListRequest**](CreateABrowserFingerprintListRequest.md) |  | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+| **create_a_country_list_request** | [**CreateACountryListRequest**](CreateACountryListRequest.md) |  | [optional] |
 
 ### Return type
 
@@ -266,7 +267,7 @@ end
 
 Create a Geolocation List
 
-Create a new <<glossary:list>> for your organization.
+Create a new list for your organization.
 
 ### Examples
 
@@ -281,12 +282,12 @@ end
 
 api_instance = PersonaAPIClient::ListsApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
-  create_a_browser_fingerprint_list_request: PersonaAPIClient::CreateABrowserFingerprintListRequest.new # CreateABrowserFingerprintListRequest | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+  create_a_country_list_request: PersonaAPIClient::CreateACountryListRequest.new # CreateACountryListRequest | 
 }
 
 begin
@@ -320,12 +321,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
-| **create_a_browser_fingerprint_list_request** | [**CreateABrowserFingerprintListRequest**](CreateABrowserFingerprintListRequest.md) |  | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+| **create_a_country_list_request** | [**CreateACountryListRequest**](CreateACountryListRequest.md) |  | [optional] |
 
 ### Return type
 
@@ -347,7 +348,7 @@ end
 
 Create a Government ID Number List
 
-Create a new <<glossary:list>> for your organization.
+Create a new list for your organization.
 
 ### Examples
 
@@ -362,12 +363,12 @@ end
 
 api_instance = PersonaAPIClient::ListsApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
-  create_a_browser_fingerprint_list_request: PersonaAPIClient::CreateABrowserFingerprintListRequest.new # CreateABrowserFingerprintListRequest | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+  create_a_country_list_request: PersonaAPIClient::CreateACountryListRequest.new # CreateACountryListRequest | 
 }
 
 begin
@@ -401,12 +402,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
-| **create_a_browser_fingerprint_list_request** | [**CreateABrowserFingerprintListRequest**](CreateABrowserFingerprintListRequest.md) |  | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+| **create_a_country_list_request** | [**CreateACountryListRequest**](CreateACountryListRequest.md) |  | [optional] |
 
 ### Return type
 
@@ -428,7 +429,7 @@ end
 
 Create a Name List
 
-Create a new <<glossary:list>> for your organization.
+Create a new list for your organization.
 
 ### Examples
 
@@ -443,11 +444,11 @@ end
 
 api_instance = PersonaAPIClient::ListsApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   create_a_name_list_request: PersonaAPIClient::CreateANameListRequest.new # CreateANameListRequest | 
 }
 
@@ -482,11 +483,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **create_a_name_list_request** | [**CreateANameListRequest**](CreateANameListRequest.md) |  | [optional] |
 
 ### Return type
@@ -509,7 +510,7 @@ end
 
 Create a Phone Number List
 
-Create a new <<glossary:list>> for your organization.
+Create a new list for your organization.
 
 ### Examples
 
@@ -524,12 +525,12 @@ end
 
 api_instance = PersonaAPIClient::ListsApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
-  create_a_browser_fingerprint_list_request: PersonaAPIClient::CreateABrowserFingerprintListRequest.new # CreateABrowserFingerprintListRequest | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+  create_a_country_list_request: PersonaAPIClient::CreateACountryListRequest.new # CreateACountryListRequest | 
 }
 
 begin
@@ -563,16 +564,97 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
-| **create_a_browser_fingerprint_list_request** | [**CreateABrowserFingerprintListRequest**](CreateABrowserFingerprintListRequest.md) |  | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+| **create_a_country_list_request** | [**CreateACountryListRequest**](CreateACountryListRequest.md) |  | [optional] |
 
 ### Return type
 
 [**CreateAPhoneNumberList201Response**](CreateAPhoneNumberList201Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## create_a_strings_list
+
+> <CreateAStringsList201Response> create_a_strings_list(opts)
+
+Create a Strings List
+
+Create a new list for your organization.
+
+### Examples
+
+```ruby
+require 'time'
+require 'persona_api_client'
+# setup authorization
+PersonaAPIClient.configure do |config|
+  # Configure Bearer authorization: bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = PersonaAPIClient::ListsApi.new
+opts = {
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+  create_a_country_list_request: PersonaAPIClient::CreateACountryListRequest.new # CreateACountryListRequest | 
+}
+
+begin
+  # Create a Strings List
+  result = api_instance.create_a_strings_list(opts)
+  p result
+rescue PersonaAPIClient::ApiError => e
+  puts "Error when calling ListsApi->create_a_strings_list: #{e}"
+end
+```
+
+#### Using the create_a_strings_list_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CreateAStringsList201Response>, Integer, Hash)> create_a_strings_list_with_http_info(opts)
+
+```ruby
+begin
+  # Create a Strings List
+  data, status_code, headers = api_instance.create_a_strings_list_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CreateAStringsList201Response>
+rescue PersonaAPIClient::ApiError => e
+  puts "Error when calling ListsApi->create_a_strings_list_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+| **create_a_country_list_request** | [**CreateACountryListRequest**](CreateACountryListRequest.md) |  | [optional] |
+
+### Return type
+
+[**CreateAStringsList201Response**](CreateAStringsList201Response.md)
 
 ### Authorization
 
@@ -590,7 +672,7 @@ end
 
 Create an Email Address List
 
-Create a new <<glossary:list>> for your organization.
+Create a new list for your organization.
 
 ### Examples
 
@@ -605,12 +687,12 @@ end
 
 api_instance = PersonaAPIClient::ListsApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
-  create_a_browser_fingerprint_list_request: PersonaAPIClient::CreateABrowserFingerprintListRequest.new # CreateABrowserFingerprintListRequest | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+  create_a_country_list_request: PersonaAPIClient::CreateACountryListRequest.new # CreateACountryListRequest | 
 }
 
 begin
@@ -644,12 +726,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
-| **create_a_browser_fingerprint_list_request** | [**CreateABrowserFingerprintListRequest**](CreateABrowserFingerprintListRequest.md) |  | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+| **create_a_country_list_request** | [**CreateACountryListRequest**](CreateACountryListRequest.md) |  | [optional] |
 
 ### Return type
 
@@ -671,7 +753,7 @@ end
 
 Create an IP Address List
 
-Create a new <<glossary:list>> for your organization.
+Create a new list for your organization.
 
 ### Examples
 
@@ -686,12 +768,12 @@ end
 
 api_instance = PersonaAPIClient::ListsApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
-  create_a_browser_fingerprint_list_request: PersonaAPIClient::CreateABrowserFingerprintListRequest.new # CreateABrowserFingerprintListRequest | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+  create_a_country_list_request: PersonaAPIClient::CreateACountryListRequest.new # CreateACountryListRequest | 
 }
 
 begin
@@ -725,12 +807,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
-| **create_a_browser_fingerprint_list_request** | [**CreateABrowserFingerprintListRequest**](CreateABrowserFingerprintListRequest.md) |  | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+| **create_a_country_list_request** | [**CreateACountryListRequest**](CreateACountryListRequest.md) |  | [optional] |
 
 ### Return type
 
@@ -752,7 +834,7 @@ end
 
 List all Lists
 
-Returns a list of your organization's <<glossary: list>>s.
+Returns a list of your organization's lists. Results are returned in reverse chronological order, with the most recently created objects first.
 
 ### Examples
 
@@ -767,12 +849,12 @@ end
 
 api_instance = PersonaAPIClient::ListsApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
   page: PersonaAPIClient::ListAllAccountsPageParameter.new, # ListAllAccountsPageParameter | 
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
-  filter: { key: { key: 3.56}} # ListAllListsFilterParameter | 
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+  filter: PersonaAPIClient::ListAllListsFilterParameter.new # ListAllListsFilterParameter | 
 }
 
 begin
@@ -806,12 +888,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
 | **page** | [**ListAllAccountsPageParameter**](.md) |  | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
-| **filter** | [**ListAllListsFilterParameter**](Object.md) |  | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+| **filter** | [**ListAllListsFilterParameter**](.md) |  | [optional] |
 
 ### Return type
 
@@ -833,7 +915,7 @@ end
 
 Retrieve a List
 
-Retrieves the details of an existing <<glossary:list>>.
+Retrieves the details of an existing list.
 
 ### Examples
 
@@ -849,11 +931,11 @@ end
 api_instance = PersonaAPIClient::ListsApi.new
 list_id = 'list_id_example' # String | ID of the list to retrieve
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -888,11 +970,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **list_id** | **String** | ID of the list to retrieve |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 

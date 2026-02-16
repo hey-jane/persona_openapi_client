@@ -31,9 +31,9 @@ api_instance = PersonaAPIClient::OAuthApi.new
 code = 'code_example' # String | Authorization Code
 grant_type = 'grant_type_example' # String | Must be set to 'authorization_code'
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05' # String | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08 # ApiVersion | 
 }
 
 begin
@@ -69,9 +69,9 @@ end
 | ---- | ---- | ----------- | ----- |
 | **code** | **String** | Authorization Code |  |
 | **grant_type** | **String** | Must be set to &#39;authorization_code&#39; | [default to &#39;authorization_code&#39;] |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
 
 ### Return type
 
@@ -111,9 +111,9 @@ client_id = 'client_id_example' # String | Organization (`org_`) to authorize
 response_type = 'response_type_example' # String | Must be set to 'code'
 scope = 'scope_example' # String | Space-separated list of 'permission:object' combinations (i.e. `inquiry.read:inq_uX7kRTiBxsJ1sZqPLAsjdP9j verification.read:ver_ynYuWdrjwwjiHJ2rgHfSoHeT`
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05' # String | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08 # ApiVersion | 
 }
 
 begin
@@ -150,9 +150,9 @@ end
 | **client_id** | **String** | Organization (&#x60;org_&#x60;) to authorize |  |
 | **response_type** | **String** | Must be set to &#39;code&#39; | [default to &#39;code&#39;] |
 | **scope** | **String** | Space-separated list of &#39;permission:object&#39; combinations (i.e. &#x60;inquiry.read:inq_uX7kRTiBxsJ1sZqPLAsjdP9j verification.read:ver_ynYuWdrjwwjiHJ2rgHfSoHeT&#x60; |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
 
 ### Return type
 

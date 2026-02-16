@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ImporterListItemGovernmentIdNumber**](ImporterListItemGovernmentIdNumber.md) |  | [optional] |
+| **data** | [**ImporterListItemGovernmentIdNumber**](ImporterListItemGovernmentIdNumber.md) |  |  |
 
 ## Example
 

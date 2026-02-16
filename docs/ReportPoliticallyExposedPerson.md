@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/politically-exposed-person | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | The ID of the report | [optional] |
 | **attributes** | [**ReportPoliticallyExposedPersonAttributes**](ReportPoliticallyExposedPersonAttributes.md) |  | [optional] |
 | **relationships** | [**ReportSharedRelationships**](ReportSharedRelationships.md) |  | [optional] |

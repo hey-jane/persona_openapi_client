@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Unique identifier for this list item. Starts with &#x60;lipn_&#x60;. | [optional] |
-| **type** | **String** | list-item/phone-number | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ListItemBrowserFingerprintAttributes**](ListItemBrowserFingerprintAttributes.md) |  | [optional] |
 | **relationships** | [**ListItemPhoneNumberRelationships**](ListItemPhoneNumberRelationships.md) |  | [optional] |
 

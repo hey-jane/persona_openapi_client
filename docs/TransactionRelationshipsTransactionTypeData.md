@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | transaction-type | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | Unique identifier for this Transaction Type. Starts with &#x60;txntp_&#x60;. | [optional] |
 
 ## Example

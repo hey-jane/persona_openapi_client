@@ -4,7 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Account**](Account.md) |  | [optional] |
+| **data** | [**Account**](Account.md) |  |  |
+| **included** | [**Array&lt;AccountType&gt;**](AccountType.md) | Objects that _may_ be returned if specified via the &#x60;include&#x60; query parameter in the request. | [optional] |
 
 ## Example
 
@@ -12,7 +13,8 @@
 require 'persona_api_client'
 
 instance = PersonaAPIClient::CreateAnAccount200Response.new(
-  data: null
+  data: null,
+  included: null
 )
 ```
 

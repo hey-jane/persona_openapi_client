@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**VerificationSelfie**](VerificationSelfie.md) |  | [optional] |
+| **data** | [**VerificationSelfie**](VerificationSelfie.md) |  |  |
 
 ## Example
 

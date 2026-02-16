@@ -31,12 +31,12 @@ end
 api_instance = PersonaAPIClient::WorkflowsApi.new
 workflow_id = 'workflow_id_example' # String | 
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
-  create_a_workflow_run_request: PersonaAPIClient::CreateAWorkflowRunRequest.new # CreateAWorkflowRunRequest | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+  create_a_workflow_run_request: PersonaAPIClient::CreateAWorkflowRunRequest.new({data: PersonaAPIClient::CreateAWorkflowRunRequestData.new({attributes: PersonaAPIClient::CreateAWorkflowRunRequestDataAttributes.new({fields: { key: 3.56}})})}) # CreateAWorkflowRunRequest | 
 }
 
 begin
@@ -71,11 +71,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **workflow_id** | **String** |  |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **create_a_workflow_run_request** | [**CreateAWorkflowRunRequest**](CreateAWorkflowRunRequest.md) |  | [optional] |
 
 ### Return type
@@ -98,7 +98,7 @@ end
 
 List all Workflow Runs
 
-Returns a list of your environment's workflow runs.
+Returns a list of your environment's workflow runs. Results are returned in reverse chronological order, with the most recently created objects first.
 
 ### Examples
 
@@ -113,12 +113,12 @@ end
 
 api_instance = PersonaAPIClient::WorkflowsApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
   page: PersonaAPIClient::ListAllAccountsPageParameter.new, # ListAllAccountsPageParameter | 
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
-  filter: { key: { key: 3.56}} # ListAllWorkflowRunsFilterParameter | 
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+  filter: PersonaAPIClient::ListAllWorkflowRunsFilterParameter.new # ListAllWorkflowRunsFilterParameter | 
 }
 
 begin
@@ -152,12 +152,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
 | **page** | [**ListAllAccountsPageParameter**](.md) |  | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
-| **filter** | [**ListAllWorkflowRunsFilterParameter**](Object.md) |  | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+| **filter** | [**ListAllWorkflowRunsFilterParameter**](.md) |  | [optional] |
 
 ### Return type
 
@@ -175,7 +175,7 @@ end
 
 ## retrieve_a_workflow_run
 
-> <CreateAWorkflowRun200Response> retrieve_a_workflow_run(workflow_run_id, opts)
+> <RetrieveAWorkflowRun200Response> retrieve_a_workflow_run(workflow_run_id, opts)
 
 Retrieve a Workflow Run
 
@@ -195,11 +195,11 @@ end
 api_instance = PersonaAPIClient::WorkflowsApi.new
 workflow_run_id = 'workflow_run_id_example' # String | Workflow Run's ID (starts with \"wfr_\")
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -215,7 +215,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAWorkflowRun200Response>, Integer, Hash)> retrieve_a_workflow_run_with_http_info(workflow_run_id, opts)
+> <Array(<RetrieveAWorkflowRun200Response>, Integer, Hash)> retrieve_a_workflow_run_with_http_info(workflow_run_id, opts)
 
 ```ruby
 begin
@@ -223,7 +223,7 @@ begin
   data, status_code, headers = api_instance.retrieve_a_workflow_run_with_http_info(workflow_run_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateAWorkflowRun200Response>
+  p data # => <RetrieveAWorkflowRun200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling WorkflowsApi->retrieve_a_workflow_run_with_http_info: #{e}"
 end
@@ -234,15 +234,15 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **workflow_run_id** | **String** | Workflow Run&#39;s ID (starts with \&quot;wfr_\&quot;) |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
-[**CreateAWorkflowRun200Response**](CreateAWorkflowRun200Response.md)
+[**RetrieveAWorkflowRun200Response**](RetrieveAWorkflowRun200Response.md)
 
 ### Authorization
 

@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **title** | **String** |  | [optional] |
 | **details** | **String** |  | [optional] |
+| **meta** | **Hash&lt;String, Object&gt;** | Additional metadata about the error | [optional] |
 
 ## Example
 
@@ -14,7 +15,8 @@ require 'persona_api_client'
 
 instance = PersonaAPIClient::InlineObject3ErrorsInner.new(
   title: null,
-  details: null
+  details: null,
+  meta: null
 )
 ```
 

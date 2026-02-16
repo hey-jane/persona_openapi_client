@@ -13,8 +13,8 @@ additionalProperties:
   gemAuthor: "Hey Jane"
   gemAuthorEmail: "eng_product@heyjane.co"
   gemLicense: "MIT"
-  gemRequiredRubyVersion: "~> 3.0"
-  gemVersion: "1.1.0"
+  gemRequiredRubyVersion: ">= 3.0"
+  gemVersion: "2.0.0"
   library: "faraday"
   moduleName: "PersonaAPIClient"
   useAutoload: true

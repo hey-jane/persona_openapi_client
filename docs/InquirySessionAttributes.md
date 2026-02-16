@@ -33,6 +33,9 @@
 | **gps_latitude** | **Float** |  | [optional] |
 | **gps_longitude** | **Float** |  | [optional] |
 | **gps_precision** | **String** |  | [optional] |
+| **ip_connection_type** | **String** |  | [optional] |
+| **ip_isp** | **String** |  | [optional] |
+| **network_organization** | **String** |  | [optional] |
 
 ## Example
 
@@ -68,7 +71,10 @@ instance = PersonaAPIClient::InquirySessionAttributes.new(
   longitude: null,
   gps_latitude: null,
   gps_longitude: null,
-  gps_precision: null
+  gps_precision: null,
+  ip_connection_type: null,
+  ip_isp: null,
+  network_organization: null
 )
 ```
 

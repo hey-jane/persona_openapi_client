@@ -6,11 +6,14 @@
 | ---- | ---- | ----------- | ----- |
 | **path** | **String** |  | [optional] |
 | **method** | **String** |  | [optional] |
-| **get_params** | **Object** | The GET params of the request. Schema depends on the action taken. | [optional] |
-| **post_params** | **Object** | The POST params of the request. Schema depends on the action taken. | [optional] |
+| **get_params** | [**UserAuditLogAttributesGetParams**](UserAuditLogAttributesGetParams.md) |  | [optional] |
+| **post_params** | [**UserAuditLogAttributesPostParams**](UserAuditLogAttributesPostParams.md) |  | [optional] |
 | **ip_address** | **String** |  | [optional] |
+| **user_agent** | **String** |  | [optional] |
+| **response_status** | **Integer** |  | [optional] |
 | **created_at** | **Time** |  | [optional] |
 | **impersonator_email_address** | **String** |  | [optional] |
+| **context** | [**UserAuditLogAttributesContext**](UserAuditLogAttributesContext.md) |  | [optional] |
 
 ## Example
 
@@ -23,8 +26,11 @@ instance = PersonaAPIClient::UserAuditLogAttributes.new(
   get_params: null,
   post_params: null,
   ip_address: null,
+  user_agent: null,
+  response_status: null,
   created_at: null,
-  impersonator_email_address: null
+  impersonator_email_address: null,
+  context: null
 )
 ```
 

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**DocumentGovernmentId**](DocumentGovernmentId.md) |  | [optional] |
+| **data** | [**DocumentGovernmentId**](DocumentGovernmentId.md) |  |  |
 
 ## Example
 

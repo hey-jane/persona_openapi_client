@@ -18,8 +18,7 @@ PersonaAPIClient::ListItemGeolocationRelationshipsCreatorData.openapi_one_of
 #   :'ListItemBrowserFingerprintRelationshipsCreatorDataOneOf1',
 #   :'ListItemBrowserFingerprintRelationshipsCreatorDataOneOf2',
 #   :'ListItemBrowserFingerprintRelationshipsCreatorDataOneOf3',
-#   :'ListItemGeolocationRelationshipsCreatorDataOneOf',
-#   :'Object'
+#   :'ListItemGeolocationRelationshipsCreatorDataOneOf'
 # ]
 ```
 
@@ -52,6 +51,5 @@ PersonaAPIClient::ListItemGeolocationRelationshipsCreatorData.build(data_that_do
 - `ListItemBrowserFingerprintRelationshipsCreatorDataOneOf2`
 - `ListItemBrowserFingerprintRelationshipsCreatorDataOneOf3`
 - `ListItemGeolocationRelationshipsCreatorDataOneOf`
-- `Object`
 - `nil` (if no type matches)
 

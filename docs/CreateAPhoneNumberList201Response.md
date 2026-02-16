@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListsPhoneNumbers**](ListsPhoneNumbers.md) |  | [optional] |
+| **data** | [**ListsPhoneNumbers**](ListsPhoneNumbers.md) |  |  |
 
 ## Example
 

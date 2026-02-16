@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/profile | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportProfileRequestAttributes**](ReportProfileRequestAttributes.md) |  | [optional] |
 
 ## Example

@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListItemIpAddress**](ListItemIpAddress.md) |  | [optional] |
+| **data** | [**ListItemIpAddress**](ListItemIpAddress.md) |  |  |
 
 ## Example
 

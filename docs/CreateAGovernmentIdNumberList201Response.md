@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListsGovernmentIdNumbers**](ListsGovernmentIdNumbers.md) |  | [optional] |
+| **data** | [**ListsGovernmentIdNumbers**](ListsGovernmentIdNumbers.md) |  |  |
 
 ## Example
 

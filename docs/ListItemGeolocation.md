@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Unique identifier for this list item. Starts with &#x60;ligl_&#x60;. | [optional] |
-| **type** | **String** | list-item/geolocation | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ListItemGeolocationAttributes**](ListItemGeolocationAttributes.md) |  | [optional] |
 | **relationships** | [**ListItemGeolocationRelationships**](ListItemGeolocationRelationships.md) |  | [optional] |
 

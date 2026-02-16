@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Report**](Report.md) |  | [optional] |
-| **included** | [**Array&lt;ReportsIncludedObjectsInner&gt;**](ReportsIncludedObjectsInner.md) |  | [optional] |
+| **data** | [**Report**](Report.md) |  |  |
+| **included** | [**Array&lt;ReportsIncludedObjectsInner&gt;**](ReportsIncludedObjectsInner.md) | Objects that _may_ be returned if specified via the &#x60;include&#x60; query parameter in the request. | [optional] |
 
 ## Example
 

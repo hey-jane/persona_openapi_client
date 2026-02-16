@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | The type identifier for a Business Adverse Media Report. |  |
+| **type** | **String** |  |  |
 | **id** | **String** | A unique identifier for the report. |  |
 | **attributes** | [**ReportBusinessAdverseMediaAttributes**](ReportBusinessAdverseMediaAttributes.md) |  |  |
 | **relationships** | [**ReportSharedRelationships**](ReportSharedRelationships.md) |  | [optional] |

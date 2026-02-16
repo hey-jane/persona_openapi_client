@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**CreateAnApiKeyRequestData**](CreateAnApiKeyRequestData.md) |  | [optional] |
+| **data** | [**CreateAnApiKeyRequestData**](CreateAnApiKeyRequestData.md) |  |  |
 
 ## Example
 

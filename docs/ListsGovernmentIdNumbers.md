@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | list/government-id-number | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** |  | [optional] |
 | **attributes** | [**ListsSharedAttributes**](ListsSharedAttributes.md) |  | [optional] |
 | **relationships** | [**ListsGovernmentIdNumbersRelationships**](ListsGovernmentIdNumbersRelationships.md) |  | [optional] |

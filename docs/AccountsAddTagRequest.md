@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **meta** | [**AccountsAddTagRequestMeta**](AccountsAddTagRequestMeta.md) |  | [optional] |
+| **meta** | [**AccountsAddTagRequestMeta**](AccountsAddTagRequestMeta.md) |  |  |
 
 ## Example
 

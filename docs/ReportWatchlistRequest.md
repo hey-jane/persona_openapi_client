@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | report/watchlist | [optional] |
+| **type** | **String** |  | [optional] |
 | **attributes** | [**ReportWatchlistRequestAttributes**](ReportWatchlistRequestAttributes.md) |  |  |
 
 ## Example

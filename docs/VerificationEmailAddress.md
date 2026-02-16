@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | verification/email-address | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | The token of the verification | [optional] |
 | **attributes** | [**VerificationEmailAddressAttributes**](VerificationEmailAddressAttributes.md) |  | [optional] |
 | **relationships** | [**VerificationSharedRelationships**](VerificationSharedRelationships.md) |  | [optional] |

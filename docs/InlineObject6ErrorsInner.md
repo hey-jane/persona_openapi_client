@@ -4,8 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **title** | **String** | Service unavailable | [optional] |
+| **title** | **String** |  | [optional] |
 | **details** | **String** |  | [optional] |
+| **source** | [**InlineObject6ErrorsInnerSource**](InlineObject6ErrorsInnerSource.md) |  | [optional] |
 
 ## Example
 
@@ -14,7 +15,8 @@ require 'persona_api_client'
 
 instance = PersonaAPIClient::InlineObject6ErrorsInner.new(
   title: null,
-  details: null
+  details: null,
+  source: null
 )
 ```
 

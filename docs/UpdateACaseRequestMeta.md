@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **sla_expires_in_seconds** | **Object** | Number of seconds from now when SLA expires (max of 90 days). Set to null to clear SLA. | [optional] |
+| **sla_expires_in_seconds** | **Float** | Number of seconds from now when SLA expires (max of 90 days). Set to null to clear SLA. | [optional] |
 
 ## Example
 

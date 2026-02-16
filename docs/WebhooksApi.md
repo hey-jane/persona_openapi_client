@@ -5,6 +5,7 @@ All URIs are relative to *https://api.withpersona.com/api/v1*
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
 | [**archive_a_webhook**](WebhooksApi.md#archive_a_webhook) | **POST** /webhooks/{webhook-id}/archive | Archive a Webhook |
+| [**clone_a_webhook**](WebhooksApi.md#clone_a_webhook) | **POST** /webhooks/{webhook-id}/clone | Clone a Webhook |
 | [**create_a_webhook**](WebhooksApi.md#create_a_webhook) | **POST** /webhooks | Create a Webhook |
 | [**disable_a_webhook**](WebhooksApi.md#disable_a_webhook) | **POST** /webhooks/{webhook-id}/disable | Disable a Webhook |
 | [**enable_a_webhook**](WebhooksApi.md#enable_a_webhook) | **POST** /webhooks/{webhook-id}/enable | Enable a Webhook |
@@ -16,7 +17,7 @@ All URIs are relative to *https://api.withpersona.com/api/v1*
 
 ## archive_a_webhook
 
-> <UpdateAWebhook200Response> archive_a_webhook(webhook_id, opts)
+> <ArchiveAWebhook200Response> archive_a_webhook(webhook_id, opts)
 
 Archive a Webhook
 
@@ -36,11 +37,11 @@ end
 api_instance = PersonaAPIClient::WebhooksApi.new
 webhook_id = 'webhook_id_example' # String | Webhook's ID (starts with \"wbh_\")
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -56,7 +57,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UpdateAWebhook200Response>, Integer, Hash)> archive_a_webhook_with_http_info(webhook_id, opts)
+> <Array(<ArchiveAWebhook200Response>, Integer, Hash)> archive_a_webhook_with_http_info(webhook_id, opts)
 
 ```ruby
 begin
@@ -64,7 +65,7 @@ begin
   data, status_code, headers = api_instance.archive_a_webhook_with_http_info(webhook_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <UpdateAWebhook200Response>
+  p data # => <ArchiveAWebhook200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling WebhooksApi->archive_a_webhook_with_http_info: #{e}"
 end
@@ -75,15 +76,96 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **webhook_id** | **String** | Webhook&#39;s ID (starts with \&quot;wbh_\&quot;) |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
-[**UpdateAWebhook200Response**](UpdateAWebhook200Response.md)
+[**ArchiveAWebhook200Response**](ArchiveAWebhook200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## clone_a_webhook
+
+> <RetrieveAWebhook200Response> clone_a_webhook(webhook_id, opts)
+
+Clone a Webhook
+
+Creates a copy of an existing webhook. All attributes except the secret are copied over to the new webhook.
+
+### Examples
+
+```ruby
+require 'time'
+require 'persona_api_client'
+# setup authorization
+PersonaAPIClient.configure do |config|
+  # Configure Bearer authorization: bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = PersonaAPIClient::WebhooksApi.new
+webhook_id = 'webhook_id_example' # String | The ID of the Webhook to clone (starts with \"wbh_\")
+opts = {
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
+}
+
+begin
+  # Clone a Webhook
+  result = api_instance.clone_a_webhook(webhook_id, opts)
+  p result
+rescue PersonaAPIClient::ApiError => e
+  puts "Error when calling WebhooksApi->clone_a_webhook: #{e}"
+end
+```
+
+#### Using the clone_a_webhook_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<RetrieveAWebhook200Response>, Integer, Hash)> clone_a_webhook_with_http_info(webhook_id, opts)
+
+```ruby
+begin
+  # Clone a Webhook
+  data, status_code, headers = api_instance.clone_a_webhook_with_http_info(webhook_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <RetrieveAWebhook200Response>
+rescue PersonaAPIClient::ApiError => e
+  puts "Error when calling WebhooksApi->clone_a_webhook_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **webhook_id** | **String** | The ID of the Webhook to clone (starts with \&quot;wbh_\&quot;) |  |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
+
+### Return type
+
+[**RetrieveAWebhook200Response**](RetrieveAWebhook200Response.md)
 
 ### Authorization
 
@@ -116,11 +198,11 @@ end
 
 api_instance = PersonaAPIClient::WebhooksApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   create_a_webhook_request: PersonaAPIClient::CreateAWebhookRequest.new({data: PersonaAPIClient::CreateAWebhookRequestData.new({attributes: PersonaAPIClient::WebhookRequestAttributes.new})}) # CreateAWebhookRequest | 
 }
 
@@ -155,11 +237,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **create_a_webhook_request** | [**CreateAWebhookRequest**](CreateAWebhookRequest.md) |  | [optional] |
 
 ### Return type
@@ -198,11 +280,11 @@ end
 api_instance = PersonaAPIClient::WebhooksApi.new
 webhook_id = 'webhook_id_example' # String | Webhook's ID (starts with \"wbh_\")
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -237,11 +319,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **webhook_id** | **String** | Webhook&#39;s ID (starts with \&quot;wbh_\&quot;) |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
@@ -259,7 +341,7 @@ end
 
 ## enable_a_webhook
 
-> <UpdateAWebhook200Response> enable_a_webhook(webhook_id, opts)
+> <ArchiveAWebhook200Response> enable_a_webhook(webhook_id, opts)
 
 Enable a Webhook
 
@@ -279,11 +361,11 @@ end
 api_instance = PersonaAPIClient::WebhooksApi.new
 webhook_id = 'webhook_id_example' # String | Webhook's ID (starts with \"wbh_\")
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -299,7 +381,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<UpdateAWebhook200Response>, Integer, Hash)> enable_a_webhook_with_http_info(webhook_id, opts)
+> <Array(<ArchiveAWebhook200Response>, Integer, Hash)> enable_a_webhook_with_http_info(webhook_id, opts)
 
 ```ruby
 begin
@@ -307,7 +389,7 @@ begin
   data, status_code, headers = api_instance.enable_a_webhook_with_http_info(webhook_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <UpdateAWebhook200Response>
+  p data # => <ArchiveAWebhook200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling WebhooksApi->enable_a_webhook_with_http_info: #{e}"
 end
@@ -318,15 +400,15 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **webhook_id** | **String** | Webhook&#39;s ID (starts with \&quot;wbh_\&quot;) |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
-[**UpdateAWebhook200Response**](UpdateAWebhook200Response.md)
+[**ArchiveAWebhook200Response**](ArchiveAWebhook200Response.md)
 
 ### Authorization
 
@@ -344,7 +426,7 @@ end
 
 List all Webhooks
 
-Returns a list of your environment's webhooks.
+Returns a list of your environment's webhooks. Results are returned in reverse chronological order, with the most recently created objects first.
 
 ### Examples
 
@@ -359,11 +441,11 @@ end
 
 api_instance = PersonaAPIClient::WebhooksApi.new
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
   page: PersonaAPIClient::ListAllAccountsPageParameter.new, # ListAllAccountsPageParameter | 
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -397,11 +479,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
 | **page** | [**ListAllAccountsPageParameter**](.md) |  | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
@@ -419,7 +501,7 @@ end
 
 ## retrieve_a_webhook
 
-> <CreateAWebhook201Response> retrieve_a_webhook(webhook_id, opts)
+> <RetrieveAWebhook200Response> retrieve_a_webhook(webhook_id, opts)
 
 Retrieve a Webhook
 
@@ -439,11 +521,11 @@ end
 api_instance = PersonaAPIClient::WebhooksApi.new
 webhook_id = 'webhook_id_example' # String | Webhook's ID (starts with \"wbh_\")
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example' # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}} # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
 }
 
 begin
@@ -459,7 +541,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAWebhook201Response>, Integer, Hash)> retrieve_a_webhook_with_http_info(webhook_id, opts)
+> <Array(<RetrieveAWebhook200Response>, Integer, Hash)> retrieve_a_webhook_with_http_info(webhook_id, opts)
 
 ```ruby
 begin
@@ -467,7 +549,7 @@ begin
   data, status_code, headers = api_instance.retrieve_a_webhook_with_http_info(webhook_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateAWebhook201Response>
+  p data # => <RetrieveAWebhook200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling WebhooksApi->retrieve_a_webhook_with_http_info: #{e}"
 end
@@ -478,15 +560,15 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **webhook_id** | **String** | Webhook&#39;s ID (starts with \&quot;wbh_\&quot;) |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 
 ### Return type
 
-[**CreateAWebhook201Response**](CreateAWebhook201Response.md)
+[**RetrieveAWebhook200Response**](RetrieveAWebhook200Response.md)
 
 ### Authorization
 
@@ -500,7 +582,7 @@ end
 
 ## rotate_a_webhook_secret
 
-> <CreateAWebhook201Response> rotate_a_webhook_secret(webhook_id, opts)
+> <RetrieveAWebhook200Response> rotate_a_webhook_secret(webhook_id, opts)
 
 Rotate a Webhook's secret
 
@@ -520,11 +602,11 @@ end
 api_instance = PersonaAPIClient::WebhooksApi.new
 webhook_id = 'webhook_id_example' # String | Webhook's ID (starts with \"wbh_\")
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   rotate_a_webhook_secret_request: PersonaAPIClient::RotateAWebhookSecretRequest.new # RotateAWebhookSecretRequest | 
 }
 
@@ -541,7 +623,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateAWebhook201Response>, Integer, Hash)> rotate_a_webhook_secret_with_http_info(webhook_id, opts)
+> <Array(<RetrieveAWebhook200Response>, Integer, Hash)> rotate_a_webhook_secret_with_http_info(webhook_id, opts)
 
 ```ruby
 begin
@@ -549,7 +631,7 @@ begin
   data, status_code, headers = api_instance.rotate_a_webhook_secret_with_http_info(webhook_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateAWebhook201Response>
+  p data # => <RetrieveAWebhook200Response>
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling WebhooksApi->rotate_a_webhook_secret_with_http_info: #{e}"
 end
@@ -560,16 +642,16 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **webhook_id** | **String** | Webhook&#39;s ID (starts with \&quot;wbh_\&quot;) |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **rotate_a_webhook_secret_request** | [**RotateAWebhookSecretRequest**](RotateAWebhookSecretRequest.md) |  | [optional] |
 
 ### Return type
 
-[**CreateAWebhook201Response**](CreateAWebhook201Response.md)
+[**RetrieveAWebhook200Response**](RetrieveAWebhook200Response.md)
 
 ### Authorization
 
@@ -603,11 +685,11 @@ end
 api_instance = PersonaAPIClient::WebhooksApi.new
 webhook_id = 'webhook_id_example' # String | Webhook's ID (starts with \"wbh_\")
 opts = {
-  key_inflection: 'camel', # String | Determines casing for the API response
-  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent
-  persona_version: '2023-01-05', # String | 
-  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details.
-  fields: 'fields_example', # String | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details.
+  key_inflection: 'camel', # String | Determines casing for the API response.
+  idempotency_key: 'idempotency_key_example', # String | Ensures the request is idempotent.
+  persona_version: PersonaAPIClient::ApiVersion::N2025_12_08, # ApiVersion | 
+  include: 'include_example', # String | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the `included` key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details.
+  fields: { key: { key: 'inner_example'}}, # Hash<String, String> | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details.
   update_a_webhook_request: PersonaAPIClient::UpdateAWebhookRequest.new # UpdateAWebhookRequest | 
 }
 
@@ -643,11 +725,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **webhook_id** | **String** | Webhook&#39;s ID (starts with \&quot;wbh_\&quot;) |  |
-| **key_inflection** | **String** | Determines casing for the API response | [optional] |
-| **idempotency_key** | **String** | Ensures the request is idempotent | [optional] |
-| **persona_version** | **String** |  | [optional][default to &#39;2023-01-05&#39;] |
-| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#inclusion-of-related-resources) for more details. | [optional] |
-| **fields** | **String** | A comma-separated list of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/reference/serialization#sparse-fieldsets) for more details. | [optional] |
+| **key_inflection** | **String** | Determines casing for the API response. | [optional] |
+| **idempotency_key** | **String** | Ensures the request is idempotent. | [optional] |
+| **persona_version** | [**ApiVersion**](.md) |  | [optional] |
+| **include** | **String** | A comma-separated list of relationship paths. This can be used to customize which related resources will be fully serialized in the &#x60;included&#x60; key in the response. See [Serialization](https://docs.withpersona.com/serialization#inclusion-of-related-resources) for more details. | [optional] |
+| **fields** | [**Hash&lt;String, String&gt;**](String.md) | Comma-separated list(s) of attributes to include in the response. This can be used to customize which attributes will be serialized in the response. See [Serialization](https://docs.withpersona.com/serialization#sparse-fieldsets) for more details. | [optional] |
 | **update_a_webhook_request** | [**UpdateAWebhookRequest**](UpdateAWebhookRequest.md) |  | [optional] |
 
 ### Return type

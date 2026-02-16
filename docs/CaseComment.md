@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **type** | **String** | Case Comment | [optional] |
+| **type** | **String** |  | [optional] |
 | **id** | **String** | Unique identifier for the Case Comment | [optional] |
 | **attributes** | [**CaseCommentAttributes**](CaseCommentAttributes.md) |  | [optional] |
 

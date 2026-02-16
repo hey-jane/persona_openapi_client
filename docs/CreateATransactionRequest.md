@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **data** | [**CreateATransactionRequestData**](CreateATransactionRequestData.md) |  | [optional] |
-| **meta** | **Hash&lt;String, Object&gt;** |  | [optional] |
+| **meta** | **Object** |  | [optional] |
 
 ## Example
 

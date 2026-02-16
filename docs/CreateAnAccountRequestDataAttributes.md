@@ -4,7 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **account_status** | **String** | BETA FEATURE -- Name of the status to set on this Account. | [optional] |
+| **account_type_id** | **String** | Account Type ID to create the account for. Starts with &#x60;acttp_&#x60;. | [optional] |
+| **account_status** | **String** | Name of the status to set on this Account. | [optional] |
 | **reference_id** | **String** | Reference ID on Account, refers to an entity in your user model | [optional] |
 | **selfie_photo** | [**CreateAnAccountRequestDataAttributesAllOfSelfiePhoto**](CreateAnAccountRequestDataAttributesAllOfSelfiePhoto.md) |  | [optional] |
 | **tags** | **Array&lt;String&gt;** | A list of tag names to be associated with the Account. | [optional] |
@@ -29,6 +30,7 @@
 require 'persona_api_client'
 
 instance = PersonaAPIClient::CreateAnAccountRequestDataAttributes.new(
+  account_type_id: null,
   account_status: null,
   reference_id: null,
   selfie_photo: null,

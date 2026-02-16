@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**ListItemCountry**](ListItemCountry.md) |  | [optional] |
+| **data** | [**ListItemCountry**](ListItemCountry.md) |  |  |
 
 ## Example
 

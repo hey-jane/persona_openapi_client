@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **title** | **String** | Conflict | [optional] |
+| **title** | **String** |  | [optional] |
 | **details** | **String** |  | [optional] |
 
 ## Example

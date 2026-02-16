@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**VerificationDatabaseTin**](VerificationDatabaseTin.md) |  | [optional] |
+| **data** | [**VerificationDatabaseTin**](VerificationDatabaseTin.md) |  |  |
 
 ## Example
 

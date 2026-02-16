@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**VerificationAamva**](VerificationAamva.md) |  | [optional] |
+| **data** | [**VerificationAamva**](VerificationAamva.md) |  |  |
 
 ## Example
 
