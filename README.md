@@ -1186,3 +1186,4 @@ Authentication schemes defined for the API:
 ### bearerAuth
 
 - **Type**: Bearer authentication
+
