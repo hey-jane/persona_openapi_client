@@ -1,9 +1,68 @@
-# To update:
-
-# rm -rf *.gem docs lib spec
-# curl https://raw.githubusercontent.com/persona-id/persona-openapi/refs/heads/main/openapi-bundled.yaml -O
-# sed -i '' 's/anyOf:/oneOf:/' openapi-bundled.yaml
-# openapi-generator generate --config openapi_generator_config.yml
+# # INSTRUCTIONS FOR UPDATING GEM
+#
+# Updating this gem is pretty straightforward, but it has a few gotchas.
+# Follow the instructions below in sequence.
+#
+# ## 1. Update the configuration
+#
+# Take a look at the configuration file (that's the file you're
+# currently looking at) to see if anything needs to change. If you're
+# regenerating, you probably want to bump the version number, at least.
+#
+# ## 2. Update the OpenAPI spec
+#
+# Download the latest `openapi-bundled.yml` file from
+# https://github.com/persona-id/persona-openapi. Save it to the
+# top-level directory as `openapi-bundled.yml`. You can use a command
+# like this:
+#
+#     curl -LO https://github.com/persona-id/persona-openapi/raw/refs/heads/main/2025-12-08/openapi-bundled.yaml
+#
+# But I recommend actually visiting the repository and ensuring you're
+# getting the most up to date version.
+#
+# ## 3. Delete the old code
+#
+# Next, remove all the old generated code:
+#
+#     rm -rf *.gem docs lib spec Gemfile Gemfile.lock persona_api_client.gemspec
+#
+# You'll want to do this so that files that are no longer generated
+# don't accidentally hang around.
+#
+# ## 4. Hack the discriminator specification for included objects
+#
+# You need to hack the spec to work around a bug in `openapi-generator`.
+# The specific bug is very subtle. You won't notice it when you generate
+# the code, and it will all load and run. But you'll get the incorrect
+# types for certain objects.
+#
+# The bug seems to be that the generator doesn't properly use the `type`
+# field as a discriminator for `anyOf` schemas. With `anyOf`, instead of
+# producing code that identifies the correct type unambiguously using
+# the `type` field, it instead produces code that tries each possible
+# schema in order, returning the first match from a list of types. Since
+# the lists of types are alphabetized, this means it finds the wrong
+# type in cases where the actual type we want is further down the
+# alphabet (e.g., `Selfie` versus `VerificationSelfie`).
+#
+# Luckily, using `oneOf` instead of `anyOf` generators code with a
+# discriminator that uses the `type` field. We can just make this change
+# throughout the spec as a workaround for the problem.
+#
+# To apply the workaround, run:
+#
+#     sed -i '' 's/anyOf:/oneOf:/' openapi-bundled.yaml
+#
+# ## 5. Regenerate the code
+#
+# Run the following to regenerate the project:
+#
+#     openapi-generator generate --config openapi_generator_config.yml
+#
+# ## 6. Finish
+#
+# Now you can commit for review.
 
 inputSpec: openapi-bundled.yaml
 generatorName: ruby
@@ -14,7 +73,7 @@ additionalProperties:
   gemAuthorEmail: "eng_product@heyjane.co"
   gemLicense: "MIT"
   gemRequiredRubyVersion: ">= 3.0"
-  gemVersion: "2.0.0"
+  gemVersion: "2.0.1"
   library: "faraday"
   moduleName: "PersonaAPIClient"
   useAutoload: true
