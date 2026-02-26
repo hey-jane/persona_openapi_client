@@ -6581,7 +6581,7 @@ paths:
                     simulate-actions:
                       items:
                         unevaluatedProperties: false
-                        anyOf:
+                        oneOf:
                           - $ref: '#/components/schemas/inquiry-status-action'
                           - $ref: '#/components/schemas/create-verification-action'
                         type: object
@@ -10485,7 +10485,7 @@ paths:
               properties:
                 data:
                   unevaluatedProperties: false
-                  anyOf:
+                  oneOf:
                     - $ref: '#/components/schemas/report-address-lookup-request'
                     - $ref: '#/components/schemas/report-adverse-media-request'
                     - $ref: '#/components/schemas/report-business-adverse-media-request'
@@ -15528,7 +15528,7 @@ components:
           propertyName: type
           mapping:
             account-type: '#/components/schemas/account-type'
-        anyOf:
+        oneOf:
           - $ref: '#/components/schemas/account-type'
     transaction:
       type: object
@@ -21773,7 +21773,7 @@ components:
             verification/government-id-nfc: '#/components/schemas/verification-government-id-nfc'
             verification/phone-number: '#/components/schemas/verification-phone-number'
             verification/selfie: '#/components/schemas/verification-selfie'
-        anyOf:
+        oneOf:
           - $ref: '#/components/schemas/account'
           - $ref: '#/components/schemas/case-comment'
           - $ref: '#/components/schemas/case-template'
@@ -22612,7 +22612,7 @@ components:
             template: '#/components/schemas/template'
             transaction: '#/components/schemas/transaction'
             document-file: '#/components/schemas/document-file'
-        anyOf:
+        oneOf:
           - $ref: '#/components/schemas/inquiry'
           - $ref: '#/components/schemas/inquiry-template'
           - $ref: '#/components/schemas/inquiry-template-version'
@@ -22840,7 +22840,7 @@ components:
           document/government-id: '#/components/schemas/document-government-id'
           document/government-id-nfc: '#/components/schemas/document-government-id-nfc'
           document/mobile-drivers-license: '#/components/schemas/document-mobile-drivers-license'
-      anyOf:
+      oneOf:
         - $ref: '#/components/schemas/document-generic'
         - $ref: '#/components/schemas/document-government-id'
         - $ref: '#/components/schemas/document-government-id-nfc'
@@ -23761,7 +23761,7 @@ components:
             verification/selfie: '#/components/schemas/verification-selfie'
             workflow: '#/components/schemas/workflow'
             workflow-run: '#/components/schemas/workflow-run'
-        anyOf:
+        oneOf:
           - $ref: '#/components/schemas/account'
           - $ref: '#/components/schemas/document-generic'
           - $ref: '#/components/schemas/document-government-id'
@@ -23855,7 +23855,7 @@ components:
           mapping:
             device: '#/components/schemas/device'
             inquiry: '#/components/schemas/inquiry'
-        anyOf:
+        oneOf:
           - $ref: '#/components/schemas/device'
           - $ref: '#/components/schemas/inquiry'
     list-item-shared-attributes:
@@ -25052,7 +25052,7 @@ components:
           list/ip-address: '#/components/schemas/lists-ip-addresses'
           list/name: '#/components/schemas/lists-names'
           list/phone-number: '#/components/schemas/lists-phone-numbers'
-      anyOf:
+      oneOf:
         - $ref: '#/components/schemas/lists-browser-fingerprints'
         - $ref: '#/components/schemas/lists-countries'
         - $ref: '#/components/schemas/lists-email-addresses'
@@ -26303,7 +26303,7 @@ components:
             report-template/synthetic: '#/components/schemas/report-template-synthetic'
             report-template/watchlist: '#/components/schemas/report-template-watchlist'
             transaction: '#/components/schemas/transaction'
-        anyOf:
+        oneOf:
           - $ref: '#/components/schemas/inquiry'
           - $ref: '#/components/schemas/account'
           - $ref: '#/components/schemas/case'
@@ -27045,7 +27045,7 @@ components:
             workflow-version: '#/components/schemas/workflow-version'
             event: '#/components/schemas/event'
             user: '#/components/schemas/user'
-        anyOf:
+        oneOf:
           - $ref: '#/components/schemas/workflow'
           - $ref: '#/components/schemas/workflow-version'
           - $ref: '#/components/schemas/event'
