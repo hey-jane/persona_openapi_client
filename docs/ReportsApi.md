@@ -345,7 +345,7 @@ end
 
 ## print_report_pdf
 
-> <Null> print_report_pdf(report_id, opts)
+> File print_report_pdf(report_id, opts)
 
 Print Report PDF
 
@@ -383,7 +383,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Null>, Integer, Hash)> print_report_pdf_with_http_info(report_id, opts)
+> <Array(File, Integer, Hash)> print_report_pdf_with_http_info(report_id, opts)
 
 ```ruby
 begin
@@ -391,7 +391,7 @@ begin
   data, status_code, headers = api_instance.print_report_pdf_with_http_info(report_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Null>
+  p data # => File
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling ReportsApi->print_report_pdf_with_http_info: #{e}"
 end
@@ -408,7 +408,7 @@ end
 
 ### Return type
 
-[**Null**](Null.md)
+**File**
 
 ### Authorization
 

@@ -14,19 +14,19 @@ require 'date'
 require 'time'
 
 module PersonaAPIClient
-  # Government ID photo data, must be images. Can provide more than one image and we will pick the best for processing. Can also be provided as uploaded file(s) such as with multipart/form-data requests instead of this object(s). Images must be between 10KB and 15MB.
-  class CreateAGovernmentIdDocumentRequestDataAttributesFrontPhotoDataInner < ApiModelBase
-    # Base64 encoded file.
-    attr_accessor :data
-
-    # Name of file.
+  class File < ApiModelBase
     attr_accessor :filename
+
+    attr_accessor :url
+
+    attr_accessor :byte_size
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'data' => :'data',
-        :'filename' => :'filename'
+        :'filename' => :'filename',
+        :'url' => :'url',
+        :'byte_size' => :'byte-size'
       }
     end
 
@@ -43,8 +43,9 @@ module PersonaAPIClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'data' => :'File',
-        :'filename' => :'String'
+        :'filename' => :'String',
+        :'url' => :'String',
+        :'byte_size' => :'Integer'
       }
     end
 
@@ -58,28 +59,28 @@ module PersonaAPIClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `PersonaAPIClient::CreateAGovernmentIdDocumentRequestDataAttributesFrontPhotoDataInner` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `PersonaAPIClient::File` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `PersonaAPIClient::CreateAGovernmentIdDocumentRequestDataAttributesFrontPhotoDataInner`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `PersonaAPIClient::File`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'data')
-        self.data = attributes[:'data']
-      else
-        self.data = nil
-      end
-
       if attributes.key?(:'filename')
         self.filename = attributes[:'filename']
-      else
-        self.filename = nil
+      end
+
+      if attributes.key?(:'url')
+        self.url = attributes[:'url']
+      end
+
+      if attributes.key?(:'byte_size')
+        self.byte_size = attributes[:'byte_size']
       end
     end
 
@@ -88,14 +89,6 @@ module PersonaAPIClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @data.nil?
-        invalid_properties.push('invalid value for "data", data cannot be nil.')
-      end
-
-      if @filename.nil?
-        invalid_properties.push('invalid value for "filename", filename cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -103,29 +96,7 @@ module PersonaAPIClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @data.nil?
-      return false if @filename.nil?
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] data Value to be assigned
-    def data=(data)
-      if data.nil?
-        fail ArgumentError, 'data cannot be nil'
-      end
-
-      @data = data
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] filename Value to be assigned
-    def filename=(filename)
-      if filename.nil?
-        fail ArgumentError, 'filename cannot be nil'
-      end
-
-      @filename = filename
     end
 
     # Checks equality by comparing each attribute.
@@ -133,8 +104,9 @@ module PersonaAPIClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          data == o.data &&
-          filename == o.filename
+          filename == o.filename &&
+          url == o.url &&
+          byte_size == o.byte_size
     end
 
     # @see the `==` method
@@ -146,7 +118,7 @@ module PersonaAPIClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [data, filename].hash
+      [filename, url, byte_size].hash
     end
 
     # Builds the object from hash

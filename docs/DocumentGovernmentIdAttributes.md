@@ -13,9 +13,9 @@
 | **address_city** | **String** | City of residence address. Not all international addresses use this attribute. | [optional] |
 | **address_subdivision** | **String** | State or subdivision of residence address. In the US, this should be the unabbreviated name. Not all international addresses use this attribute. | [optional] |
 | **address_postal_code** | **String** | ZIP or postal code of residence address. Not all international addresses use this attribute. | [optional] |
-| **front_photo** | [**Null**](Null.md) |  | [optional] |
-| **back_photo** | [**Null**](Null.md) |  | [optional] |
-| **selfie_photo** | [**Null**](Null.md) |  | [optional] |
+| **front_photo** | **File** |  | [optional] |
+| **back_photo** | **File** |  | [optional] |
+| **selfie_photo** | **File** |  | [optional] |
 | **id_class** | **String** |  | [optional] |
 | **name_first** | **String** | Given or first name. | [optional] |
 | **name_middle** | **String** | Middle name. | [optional] |

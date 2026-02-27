@@ -356,7 +356,7 @@ module PersonaAPIClient
     # @option opts [String] :key_inflection Determines casing for the API response.
     # @option opts [String] :idempotency_key Ensures the request is idempotent.
     # @option opts [ApiVersion] :persona_version 
-    # @return [Null]
+    # @return [File]
     def print_report_pdf(report_id, opts = {})
       data, _status_code, _headers = print_report_pdf_with_http_info(report_id, opts)
       data
@@ -369,7 +369,7 @@ module PersonaAPIClient
     # @option opts [String] :key_inflection Determines casing for the API response.
     # @option opts [String] :idempotency_key Ensures the request is idempotent.
     # @option opts [ApiVersion] :persona_version 
-    # @return [Array<(Null, Integer, Hash)>] Null data, response status code and response headers
+    # @return [Array<(File, Integer, Hash)>] File data, response status code and response headers
     def print_report_pdf_with_http_info(report_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ReportsApi.print_report_pdf ...'
@@ -403,7 +403,7 @@ module PersonaAPIClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Null'
+      return_type = opts[:debug_return_type] || 'File'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['bearerAuth']

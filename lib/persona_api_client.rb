@@ -252,6 +252,7 @@ PersonaAPIClient.autoload :ExpireInquirySessionsRequest, 'persona_api_client/mod
 PersonaAPIClient.autoload :ExpireInquirySessionsRequestMeta, 'persona_api_client/models/expire_inquiry_sessions_request_meta'
 PersonaAPIClient.autoload :ExtractionResponsesInner, 'persona_api_client/models/extraction_responses_inner'
 PersonaAPIClient.autoload :ExtractionResponsesInnerResultsInner, 'persona_api_client/models/extraction_responses_inner_results_inner'
+PersonaAPIClient.autoload :File, 'persona_api_client/models/file'
 PersonaAPIClient.autoload :GenerateAOneTimeLink200Response, 'persona_api_client/models/generate_a_one_time_link200_response'
 PersonaAPIClient.autoload :GenerateAOneTimeLink200ResponseMeta, 'persona_api_client/models/generate_a_one_time_link200_response_meta'
 PersonaAPIClient.autoload :GenerateAOneTimeLinkForAnInquirySession200Response, 'persona_api_client/models/generate_a_one_time_link_for_an_inquiry_session200_response'
@@ -953,8 +954,6 @@ PersonaAPIClient.autoload :TransactionsApi, 'persona_api_client/api/transactions
 PersonaAPIClient.autoload :UserAuditLogsApi, 'persona_api_client/api/user_audit_logs_api'
 PersonaAPIClient.autoload :VerificationsApi, 'persona_api_client/api/verifications_api'
 PersonaAPIClient.autoload :WebhooksApi, 'persona_api_client/api/webhooks_api'
-PersonaAPIClient.autoload :WebhooksAccountEventsApi, 'persona_api_client/api/webhooks_account_events_api'
-PersonaAPIClient.autoload :WebhooksInquiryEventsApi, 'persona_api_client/api/webhooks_inquiry_events_api'
 PersonaAPIClient.autoload :WorkflowsApi, 'persona_api_client/api/workflows_api'
 
 module PersonaAPIClient

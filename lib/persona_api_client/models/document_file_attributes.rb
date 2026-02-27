@@ -46,7 +46,7 @@ module PersonaAPIClient
       {
         :'name' => :'String',
         :'capture_method' => :'String',
-        :'originals' => :'Array<Null>'
+        :'originals' => :'Array<File>'
       }
     end
 

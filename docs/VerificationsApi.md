@@ -11,7 +11,7 @@ All URIs are relative to *https://api.withpersona.com/api/v1*
 
 ## print_a_verification_as_pdf
 
-> <Null> print_a_verification_as_pdf(verification_id, opts)
+> File print_a_verification_as_pdf(verification_id, opts)
 
 Print Verification PDF
 
@@ -49,7 +49,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Null>, Integer, Hash)> print_a_verification_as_pdf_with_http_info(verification_id, opts)
+> <Array(File, Integer, Hash)> print_a_verification_as_pdf_with_http_info(verification_id, opts)
 
 ```ruby
 begin
@@ -57,7 +57,7 @@ begin
   data, status_code, headers = api_instance.print_a_verification_as_pdf_with_http_info(verification_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Null>
+  p data # => File
 rescue PersonaAPIClient::ApiError => e
   puts "Error when calling VerificationsApi->print_a_verification_as_pdf_with_http_info: #{e}"
 end
@@ -74,7 +74,7 @@ end
 
 ### Return type
 
-[**Null**](Null.md)
+**File**
 
 ### Authorization
 

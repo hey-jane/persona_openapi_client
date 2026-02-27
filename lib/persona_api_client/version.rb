@@ -11,5 +11,5 @@ Generator version: 7.20.0
 =end
 
 module PersonaAPIClient
-  VERSION = '2.0.1'
+  VERSION = '2.0.3'
 end
