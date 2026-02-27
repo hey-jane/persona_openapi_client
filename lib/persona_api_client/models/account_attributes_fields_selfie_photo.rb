@@ -63,7 +63,7 @@ module PersonaAPIClient
     def self.openapi_types
       {
         :'type' => :'String',
-        :'value' => :'Null'
+        :'value' => :'File'
       }
     end
 

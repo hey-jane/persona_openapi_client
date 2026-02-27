@@ -108,7 +108,7 @@ describe 'ReportsApi' do
   # @option opts [String] :key_inflection Determines casing for the API response.
   # @option opts [String] :idempotency_key Ensures the request is idempotent.
   # @option opts [ApiVersion] :persona_version 
-  # @return [Null]
+  # @return [File]
   describe 'print_report_pdf test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

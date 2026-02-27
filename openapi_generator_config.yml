@@ -21,16 +21,7 @@
 # But I recommend actually visiting the repository and ensuring you're
 # getting the most up to date version.
 #
-# ## 3. Delete the old code
-#
-# Next, remove all the old generated code:
-#
-#     rm -rf *.gem docs lib spec Gemfile Gemfile.lock persona_api_client.gemspec
-#
-# You'll want to do this so that files that are no longer generated
-# don't accidentally hang around.
-#
-# ## 4. Hack the discriminator specification for included objects
+# ## 3. Hack the discriminator specification for included objects
 #
 # You need to hack the spec to work around a bug in `openapi-generator`.
 # The specific bug is very subtle. You won't notice it when you generate
@@ -54,6 +45,36 @@
 #
 #     sed -i '' 's/anyOf:/oneOf:/' openapi-bundled.yaml
 #
+# ## 4. Hack the file schema type to reference `file` first
+#
+# You need to hack the spec one more time to work around another bug in
+# `openapi-generator`. This is another case that is very difficult to
+# notice.
+#
+# The explanation is rather complicated, but basically, the order of
+# types for the file schema gives `null` first in the list of types. In
+# an older version of the spec, this wasn't a problem because `null` was
+# a specifically defined object. In the newer version, the `null` object
+# schema got removed, exposing this bug. Therefore, we need to make sure
+# that the `file` type comes first in that list.
+#
+# To apply the workaround, run:
+#
+#     sed -i '' "/^    file:$/,/^    [a-z]/{
+#       s/- 'null'/- TEMP_NULL/
+#       s/- object/- 'null'/
+#       s/- TEMP_NULL/- object/
+#     }" openapi-bundled.yaml
+#
+# ## 5. Delete the old code
+#
+# Next, remove all the old generated code:
+#
+#     rm -rf *.gem docs lib spec Gemfile Gemfile.lock persona_api_client.gemspec
+#
+# You'll want to do this so that files that are no longer generated
+# don't accidentally hang around.
+#
 # ## 5. Regenerate the code
 #
 # Run the following to regenerate the project:
@@ -73,7 +94,7 @@ additionalProperties:
   gemAuthorEmail: "eng_product@heyjane.co"
   gemLicense: "MIT"
   gemRequiredRubyVersion: ">= 3.0"
-  gemVersion: "2.0.1"
+  gemVersion: "2.0.3"
   library: "faraday"
   moduleName: "PersonaAPIClient"
   useAutoload: true

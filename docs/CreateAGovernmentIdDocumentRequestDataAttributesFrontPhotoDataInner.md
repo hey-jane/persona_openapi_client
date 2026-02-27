@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **data** | [**Null**](Null.md) | Base64 encoded file. |  |
+| **data** | **File** | Base64 encoded file. |  |
 | **filename** | **String** | Name of file. |  |
 
 ## Example

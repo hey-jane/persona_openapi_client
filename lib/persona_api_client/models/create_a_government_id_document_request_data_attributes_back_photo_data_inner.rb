@@ -43,7 +43,7 @@ module PersonaAPIClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'data' => :'Null',
+        :'data' => :'File',
         :'filename' => :'String'
       }
     end

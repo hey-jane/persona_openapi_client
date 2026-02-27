@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **type** | **String** |  | [optional] |
-| **value** | [**Null**](Null.md) |  | [optional] |
+| **value** | **File** |  | [optional] |
 
 ## Example
 

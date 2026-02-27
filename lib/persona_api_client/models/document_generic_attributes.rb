@@ -74,8 +74,8 @@ module PersonaAPIClient
         :'processed_at' => :'Time',
         :'processed_at_ts' => :'Integer',
         :'kind' => :'String',
-        :'files' => :'Array<Null>',
-        :'files_normalized' => :'Array<Null>',
+        :'files' => :'Array<File>',
+        :'files_normalized' => :'Array<File>',
         :'extraction_responses' => :'Array<ExtractionResponsesInner>',
         :'document_type' => :'String',
         :'fields' => :'Hash<String, Object>'

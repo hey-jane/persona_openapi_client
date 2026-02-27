@@ -16,8 +16,8 @@
 | **tags** | **Array&lt;String&gt;** | Tags on the verification | [optional] |
 | **checks** | [**Array&lt;VerificationSharedAttributesChecksInner&gt;**](VerificationSharedAttributesChecksInner.md) |  | [optional] |
 | **fields** | **Object** | JSON key-value pairs of field name to field value. | [optional] |
-| **files** | [**Array&lt;Null&gt;**](Null.md) | The files uploaded to the associated document for processing. | [optional] |
-| **files_normalized** | [**Array&lt;Null&gt;**](Null.md) |  | [optional] |
+| **files** | **Array&lt;File&gt;** | The files uploaded to the associated document for processing. | [optional] |
+| **files_normalized** | **Array&lt;File&gt;** |  | [optional] |
 | **extraction_responses** | [**Array&lt;ExtractionResponsesInner&gt;**](ExtractionResponsesInner.md) | A list of extractions resulting from processing the uploaded documents corresponding to the document&#39;s extraction configuration. | [optional] |
 | **document_type** | **String** | Document classification assignment based on document content. | [optional] |
 

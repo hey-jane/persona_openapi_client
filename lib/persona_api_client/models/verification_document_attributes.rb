@@ -108,8 +108,8 @@ module PersonaAPIClient
         :'tags' => :'Array<String>',
         :'checks' => :'Array<VerificationSharedAttributesChecksInner>',
         :'fields' => :'Object',
-        :'files' => :'Array<Null>',
-        :'files_normalized' => :'Array<Null>',
+        :'files' => :'Array<File>',
+        :'files_normalized' => :'Array<File>',
         :'extraction_responses' => :'Array<ExtractionResponsesInner>',
         :'document_type' => :'String'
       }

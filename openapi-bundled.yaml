@@ -15133,8 +15133,8 @@ components:
         - '2020-05-18'
     file:
       type:
-        - 'null'
         - object
+        - 'null'
       properties:
         filename:
           examples:
